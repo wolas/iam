@@ -1,4 +1,5 @@
 class StaticController < ApplicationController
+  
   def index
     
     @result = 5 + 7
