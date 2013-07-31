@@ -1,0 +1,43 @@
+Cuadros
+
+  - Artista
+  - Titulo
+  - Tecnica
+  - Tamaño
+  - Año
+  - Precio
+  - Foto
+  - Tag
+  - Evento (Exposicion)
+
+Artistas
+  
+  - Bio
+  - Nombre
+  - Galeria de fotos
+  - Año de nacimiento
+  - Nacionalidad
+  - Web
+  
+Evento
+  
+  - tipo: Exposicion | Pop-Up
+  - Nombre
+  - Resumen
+  - Duracion
+  - Lugar
+  - Sponsors
+  - Galeria de fotos  
+  - Cuadros --> Artistas
+  
+About
+Contacto
+Index
+
+
+Blog
+  
+  - Post
+  - Comment
+  - Galeria de fotos
+  - 
