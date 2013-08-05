@@ -2,11 +2,13 @@ class StaticController < ApplicationController
   
   def index
     
-    @result = 5 + 7
+    @news_items = []
     
   end
 
   def manifesto
+    
+    
   end
 
   def trayectory
