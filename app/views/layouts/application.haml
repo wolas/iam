@@ -2,60 +2,68 @@
 %html
   %head
     %title Iam
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,700"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags
+    <%= stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans:400,700" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
   %body
     #header
-      #logo
-        = image_tag "logo.png"
+      .header.container
+        #logo
+          <%= image_tag "logo.png" %>
+
+
+        #search{:class => "fr"}
+          %form{:action => "#"}
+            %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}/ 
+            %input{:type => "submit", :id => "send", :name =>"send"}/           
+          
+        #menu
+          %ul.clearfix
+            %li
+              %a(href='#') EL ESPACIO  
+              
+            %li 
+              %a(href='#') I AM 
+              
+            %li
+              %a(href='#') ARTISTAS 
+              
+            %li 
+              %a(href='#') EXPOSICIONES 
+              
+            %li
+              %a(href='#') ACTIVIDADES 
+              
+            %li 
+              %a(href='#') BLOG
+              
+            %li 
+              %a(href='#') SHOP
+              
+            %li 
+              %a(href='#') CONTACTO
+
         
-      #menu
-        %ul.clearfix
-          %li
-            %a(href='#') EL ESPACIO  
             
-          %li 
-            %a(href='#') I AM 
-            
-          %li
-            %a(href='#') ARTISTAS 
-            
-          %li 
-            %a(href='#') EXPOSICIONES 
-            
-          %li
-            %a(href='#') ACTIVIDADES 
-            
-          %li 
-            %a(href='#') BLOG
-            
-          %li 
-            %a(href='#') SHOP
-            
-          %li 
-            %a(href='#') CONTACTO
-            
-          
-       
-          
-      #slider= yield
-            
-      #footer.clearfix
+        
+     
+        
+    #slider
+      .slider.container
+
+
+    #footer      
+      .footer.container.clearfix
         #map.fl
-          =image_tag "map.png"
+          <%=image_tag "map.png" %>
         #iam.fl
           #address
             %h5 
               %b IAM 
-              GALLERY 
-            %h5 MADRID
+              GALLERY MADRID
             %p 
-              %b C/San Blas 4.28014
-            %p 
-              %b Madrid
+              %b C/San Blas 4. 28014. Madrid
           #additional-info.fl
             %p 
               %b Metro
@@ -72,8 +80,8 @@
           #time
             %h5
               %b HORARIO
-              DE
-            %h5 APERTURA
+              DE  
+              %b APERTURA
             %p
               %b De Martes a Viernes
             %p de 10:00h a 14:00h
@@ -84,7 +92,7 @@
           #appointment
             %p
               %b Previa Cita
-            %p Llamando al 681 063 155  
+            %p Llamando al 681 063 155    
                 
         #contact.fl
           %h5 CONTACTO
@@ -106,6 +114,11 @@
               %b Comunicación
             %p Zigor Cavero  
             %p cominucaion@iamgallerymadrid.com
+
+    #small-footer
+      .small-footer.container
+        %p 
+          © Copyright - iam Gallery Madrid - Design by TASTE        
       
             
     
