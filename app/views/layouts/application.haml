@@ -2,21 +2,21 @@
 %html
   %head
     %title Iam
-    <%= stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans:400,700" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
+    = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans:400,700"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
 
   %body
     #header
       .header.container
         #logo
-          <%= image_tag "logo.png" %>
+          = image_tag "logo.png"
 
 
         #search{:class => "fr"}
           %form{:action => "#"}
-            %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}/ 
-            %input{:type => "submit", :id => "send", :name =>"send"}/           
+            %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
+            %input{:type => "submit", :id => "send", :name =>"send"}      
           
         #menu
           %ul.clearfix
