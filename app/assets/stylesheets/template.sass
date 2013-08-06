@@ -68,33 +68,45 @@ body
   right: 0
   #find
     position: absolute
-    right: 58px
-    padding: 10px
+    width: 100px
+    right: 27px
+    height: 28px
+    line-height: 28px
+    padding-left: 5px
     border: 1px solid rgba(225,225,225,1)
     background-color: rgba(248,248,248,1)
     margin: 0
+    -webkit-transition: width 2s
+    -moz-transition: width 2s
+    -o-transition: width 2s
+    transition: width 2s
+  #find:hover 
+    width: 200px 
   #send 
-    padding: 10px 
+    width: 28px
+    height: 32px
     border: 1px solid rgba(225,225,225,1)
-    background-color: rgba(248,248,248,1) url ("../assets/images/icon-search-button.png")
-    margin: 0
+    background: url("icon-search-button.png") no-repeat 0 0 
+    color: transparent
 
   
 #menu
   ul
     list-style: none  
     width: 960px
+    margin-bottom: 10px
     li
       float: left
-      margin-right: 5px  
+      margin-right: 5px 
+      font-weight: bold 
       a
         color: rgb(51,51,51)
-      a
       a:hover
         color: rgb(128,128,128)  
       a:after
         content: "|"
         color: rgb(128,128,128)
+        margin: 0 5px
 
       
     
@@ -122,19 +134,10 @@ body
   width: 23%  
   margin: 0 1%
 
-#iam 
-  #address
-    margin-bottom: 15px
 
-#timetable
-  #time 
-    margin-bottom: 20px  
-
-#contact
-  #expo
-    margin-bottom: 20px
-  #event
-    margin-bottom: 20px    
+#address, #time, #expo, #event
+  margin-bottom: 20px
+    
 
 #small-footer
   background-color: rgb(51,51,51)
