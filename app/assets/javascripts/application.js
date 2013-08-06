@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function initialize() {
+    var mapOptions = {
+      center: new google.maps.LatLng(40.410684, -3.694688),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
