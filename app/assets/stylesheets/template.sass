@@ -23,11 +23,6 @@ a
 
 
 /*Font*/
-
-a
-  font-size: 12px 
-b
-  font-size: 14px   
 p
   margin-bottom: 8px
 h1
@@ -49,8 +44,10 @@ h6
 
 body
   background-color: #fff
-  font-family: 'Open Sans', sans-serif
-  font-size: 13px
+  font:
+    family: 'Open Sans', Helvetica, Verdana, sans-serif
+    size: 13px
+    weight: 400
   
   
 #header, #slider, #footer
@@ -91,10 +88,20 @@ body
 
   
 #menu
+  font:
+    family: Helvetica
+    weight: bold
+    size: 13px
+  
   ul
     list-style: none  
     width: 960px
     margin-bottom: 10px
+    
+    li.last
+      a:after
+        content: ""
+    
     li
       float: left
       margin-right: 5px 

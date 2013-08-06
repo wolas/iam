@@ -2,7 +2,7 @@
 %html
   %head
     %title Iam
-    = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans:400,700"
+    = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans"
     = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDz94qDUpQvN59y2SNJTEKqeEKvdGqxpQE&sensor=true", "application"
     = csrf_meta_tags
 
@@ -21,7 +21,7 @@
         #menu
           %ul.clearfix
             %li
-              %a(href='#') EL ESPACIO  
+              %a(href='#') EL ESPACIOS
               
             %li 
               %a(href='#') I AM 
@@ -41,12 +41,12 @@
             %li 
               %a(href='#') SHOP
               
-            %li 
+            %li.last
               %a(href='#') CONTACTO
  
     #slider
       .slider.container
-
+        = yield
 
     #footer      
       .footer.container.clearfix
