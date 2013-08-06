@@ -1,6 +1,7 @@
 Iam::Application.routes.draw do
   get "static/manifesto", :as => "manifesto"
-  get "static/trayectory", :as => "gus"
+  get "static/trayectory"
+  get "static/map", :as => "map"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

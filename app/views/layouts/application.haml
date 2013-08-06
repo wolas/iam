@@ -3,10 +3,10 @@
   %head
     %title Iam
     = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans:400,700"
-    = javascript_include_tag "application", "http://maps.googleapis.com/maps/api/js?key=AIzaSyDz94qDUpQvN59y2SNJTEKqeEKvdGqxpQE&sensor=true"
+    = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDz94qDUpQvN59y2SNJTEKqeEKvdGqxpQE&sensor=true", "application"
     = csrf_meta_tags
 
-  %body{:onload => "initialize()"}
+  %body{:onload => "initialize();"}
     #header
       .header.container
         #logo
@@ -15,8 +15,8 @@
 
         #search{:class => "fr"}
           %form{:action => "#"}
-            %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"} 
-            %input{:type => "submit", :id => "send", :name =>"send"}            
+            %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
+            %input{:type => "submit", :id => "send", :name =>"send"}  
           
         #menu
           %ul.clearfix
@@ -43,20 +43,16 @@
               
             %li 
               %a(href='#') CONTACTO
-
-        
-            
-        
-     
-        
+ 
     #slider
       .slider.container
 
 
     #footer      
       .footer.container.clearfix
-        #map-canvas.fl
-          
+
+        #map_canvas.fl
+        
         #iam.fl
           #address
             %h5 
@@ -100,7 +96,7 @@
           #expo
             %p
               %b Exposiciones y Galeria
-            %p Pilar Lleó
+            %p Paloma Díaz-Ronda
             %p iam@iamgallerymadrid.com
             %p 91 369 48 25
             %p  681 386 155
@@ -119,7 +115,7 @@
     #small-footer
       .small-footer.container
         %p 
-          © Copyright - iam Gallery Madrid - Design by TASTE        
+          © Copyright - iam Gallery Madrid      
       
             
     

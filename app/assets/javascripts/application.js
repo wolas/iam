@@ -21,5 +21,7 @@ function initialize() {
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
 }
