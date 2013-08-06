@@ -3,10 +3,10 @@
   %head
     %title Iam
     = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans:400,700"
-    = javascript_include_tag "application", "http://maps.googleapis.com/maps/api/js?key=AIzaSyDz94qDUpQvN59y2SNJTEKqeEKvdGqxpQE&sensor=true"
+    = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDz94qDUpQvN59y2SNJTEKqeEKvdGqxpQE&sensor=true", "application"
     = csrf_meta_tags
 
-  %body{:onload => "initialize()"}
+  %body{:onload => "initialize();"}
     #header
       .header.container
         #logo
@@ -50,7 +50,7 @@
 
     #footer      
       .footer.container.clearfix
-        #map.fl
+        #map_canvas.fl
         
         #iam.fl
           #address
