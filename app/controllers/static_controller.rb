@@ -13,4 +13,8 @@ class StaticController < ApplicationController
 
   def trayectory
   end
+  
+  def map
+    
+  end
 end
