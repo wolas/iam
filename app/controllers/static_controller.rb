@@ -8,4 +8,7 @@ class StaticController < ApplicationController
 
   def trayectory
   end
+
+  def legal
+  end
 end

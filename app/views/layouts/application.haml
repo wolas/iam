@@ -10,12 +10,7 @@
     #header
       .header.container
         #logo
-          = image_tag "logo.png"
-          
-          
-          foooo
-          bar
-          
+          = link_to image_tag("logo.png"), root_path
 
         #search{:class => "fr"}
           %form{:action => "#"}
@@ -28,7 +23,7 @@
               %a(href='#') EL ESPACIO
               
             %li 
-              %a(href='#') I AM 
+              =link_to("MANIFESTO", manifesto_path) 
               
             %li
               %a(href='#') ARTISTAS 
@@ -47,6 +42,11 @@
               
             %li.last
               %a(href='#') CONTACTO
+
+    #breadcrumb
+      .breadcrumb.container 
+        = yield(:breadcrumbs)
+
  
     #slider
       .slider.container
@@ -103,7 +103,7 @@
             %p Paloma Díaz-Ronda
             %p iam@iamgallerymadrid.com
             %p 91 369 48 25
-            %p  681 386 155
+            %p.margin 681 386 155
           #event
             %p
               %b Eventos
@@ -119,7 +119,8 @@
     #small-footer
       .small-footer.container
         %p 
-          © Copyright - iam Gallery Madrid      
+          © Copyright - iam Gallery Madrid - 
+          = link_to "Aviso Legal", legal_path
       
             
     
