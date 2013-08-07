@@ -12,7 +12,6 @@
         #logo
           = link_to image_tag("logo.png"), root_path
 
-
         #search{:class => "fr"}
           %form{:action => "#"}
             %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
@@ -21,7 +20,7 @@
         #menu
           %ul.clearfix
             %li
-              %a(href='#') EL ESPACIOS
+              %a(href='#') EL ESPACIO
               
             %li 
               =link_to("MANIFESTO", manifesto_path) 
@@ -52,7 +51,7 @@
     #slider
       .slider.container
         = yield
-
+        
     #footer      
       .footer.container.clearfix
 
