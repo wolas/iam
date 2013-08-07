@@ -1,5 +1,11 @@
+$footer_height: 150px
 
-/*Main Style*/
+html,body
+  height: 100%
+
+
+  /*Main Style*/
+
 body
   background-color: #fff
   font:
@@ -8,6 +14,15 @@ body
     weight: 400
   line-height: 1.5em
 
+#body_wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto ($footer_height * -1)
+
+#footer,#footer_push
+  height: $footer_height
+  
 
 .clearfix:after
   content: "."
@@ -23,10 +38,10 @@ body
 
 .fl
   float: left
-  
+
 .fr
   float: right 
-  
+
 a
   text-decoration: none
 
@@ -39,8 +54,7 @@ blockquote
 span
   color: rgba(34,34,34,1)   
 
-/*Font*/
-
+  /*Font*/
 
 h1
   font-size: 24px
@@ -56,23 +70,23 @@ h5
 h6
   font-size: 12px  
 
-/* Color */
+  /* Color */
 p
   color: rgba(102,102,111,1)
 p.black
   color: rgba(34,34,34,1)
 
 
-/* INDEX  */ 
+  /* INDEX  */ 
 
 #header
   border-top: 3px solid rgba(34,34,34,1)
-  
+
 #header,#breadcrumb,#slider,#footer
   width: 100% 
 .header,.slider,.footer
   position: relative  
- 
+
 #logo
   padding-top: 20px
   margin-bottom: 20px
@@ -109,22 +123,22 @@ p.black
     background: url("icon-search-button.png") no-repeat 0 0 
     color: transparent
 
-  
+
 #menu
   font:
     family: Helvetica
     weight: bold
     size: 12px
-  
+
   ul
     list-style: none  
     width: 960px
     margin-bottom: 10px
-    
+  
     li.last
       a:after
         content: ""
-    
+  
     li
       float: left
       margin-right: 5px 
@@ -139,7 +153,7 @@ p.black
         color: rgb(128,128,128)
         margin: 0 10px
 
-      
+  
 #breadcrumb
   background-color: black
   padding: 35px 0
@@ -158,14 +172,14 @@ p.black
   a:hover
     text-decoration: underline
     color: rgba(196,196,196,1)
-          
-    
+        
+  
 #slider
   background-color: white
   margin-bottom: 20px
 
-  
-  
+
+
 #footer
   background-color: black
   color: rgba(128,128,128,0.6)
@@ -182,17 +196,17 @@ p.black
 #map_canvas
   width: 240px
   height: 200px
- 
-    
+
+  
 #iam,#timetable,#contact
   width: 23%  
   margin: 0 1%
- 
+
 
 
 #address, #time, #expo, #event
   margin-bottom: 20px
-    
+  
 
 #small-footer
   background-color: rgb(51,51,51)
@@ -204,13 +218,13 @@ p.black
     p
       color: rgb(232,238,208)
 
-    
-/* LEGAL  */    
+  
+  /* LEGAL  */    
 p.border_legal
   border-bottom: 3px solid rgba(34,34,34,1)
   padding-bottom: 30px
-  
-/*TRAYECTORIA*/
+
+  /*TRAYECTORIA*/
 #viewport
   width: 960px
   overflow: hidden

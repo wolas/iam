@@ -3,63 +3,65 @@
   %head
     %title Iam
     = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Open+Sans"
-    = javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDz94qDUpQvN59y2SNJTEKqeEKvdGqxpQE&sensor=true", "application"
+    = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body{:onload => "initialize();"}
-    #header
-      .header.container
-        #logo
-          = link_to image_tag("logo.png"), root_path
+  %body
+    #body_wrapper
+      #header
+        .header.container
+          #logo
+            = link_to image_tag("logo.png"), root_path
 
-        #search{:class => "fr"}
-          %form{:action => "#"}
-            %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
-            %input{:type => "submit", :id => "send", :name =>"send"}  
+          #search{:class => "fr"}
+            %form{:action => "#"}
+              %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
+              %input{:type => "submit", :id => "send", :name =>"send"}  
           
-        #menu
-          %ul.clearfix
-            %li
-              %a(href='#') EL ESPACIO
+          #menu
+            %ul.clearfix
+              %li
+                %a(href='#') EL ESPACIO
               
-            %li 
-              =link_to("MANIFESTO", manifesto_path)
+              %li 
+                =link_to("MANIFESTO", manifesto_path)
               
-            %li
-              =link_to("TRAYECTORÍA", trajectory_path)
+              %li
+                =link_to("TRAYECTORÍA", trajectory_path)
               
-            %li 
-              %a(href='#') EXPOSICIONES 
+              %li 
+                %a(href='#') EXPOSICIONES 
               
-            %li
-              %a(href='#') ACTIVIDADES 
+              %li
+                %a(href='#') ACTIVIDADES 
               
-            %li 
-              %a(href='#') BLOG
+              %li 
+                %a(href='#') BLOG
               
-            %li 
-              %a(href='#') SHOP
+              %li 
+                %a(href='#') SHOP
               
-            %li.last
-              %a(href='#') CONTACTO
+              %li.last
+                %a(href='#') CONTACTO
 
-    #breadcrumb
-      .breadcrumb.container 
-        = yield(:breadcrumbs)
+      #breadcrumb
+        .breadcrumb.container 
+          = yield(:breadcrumbs)
 
  
-    #slider
-      .slider.container
-        = yield
-        
+      #slider
+        .slider.container
+          = yield
+      
+      #footer_push
     #footer      
       .footer.container.clearfix
         
-    #small-footer
-      .small-footer.container
-        %p 
-          © Copyright - iam Gallery Madrid - 
-          = link_to "Aviso Legal", legal_path
+      #small-footer
+        .small-footer.container
+          %p 
+            © Copyright - iam Gallery Madrid - 
+            = link_to "Aviso Legal", legal_path
       
             
     
