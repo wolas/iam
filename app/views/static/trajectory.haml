@@ -1,29 +1,56 @@
 - content_for(:breadcrumbs) do
-  %h1 Trajectoría
+  %h1 Trayectoría
   %p 
     You are here: 
     = link_to "Home", root_path 
-    > Trajectoría
+    > Trayectoría
 
-
+// QUITO LA CALSE ACTIVE Y HAGO FADE OUT
+//Y AL QUE CLICKEO LE AÑADO LA CLASE Y HAGO FADE IN
 :javascript
   $(document).ready(function() {
+    
+    var viewport = $('#viewport');
+    
+    // height of #content_2009 by hand... sorry!
+    viewport.css('height', 4198);
+
     // Click event for any anchor tag that's href starts with #
+
     $('a[href^="#"]').click(function(event) {
-      // The id of the section we want to go to.
-      var id = $(this).attr("href");
+       var active_id = $('.active').attr('id');
+      var active = $("#" + active_id );
       
-      // Our scroll target : the top position of the
-      // section that has the id referenced by our href.
-      var target = $(id).offset().left - $('#holder').offset().left;
+      var clicked_id = $(this).attr('href');
+      var clicked = $(clicked_id);
+      var viewpot_height = clicked.height();
       
-      // The magic...smooth scrollin' goodness.
-      //$('#prices_wrap, #prices').animate({scrollTop:target}, 500);
-      $('#viewport, #holder').stop().animate({scrollLeft:target}, 500);
+      viewport.height(viewpot_height + 40);
+
+      viewport.slideUp(700, function() {
+          
+          // Fade in new list on callback
+          active.fadeOut(500);
+          clicked.fadeIn(500);
+          
+          // Adjust outer wrapper to fit new list snuggly
+          //viewport.animate({height: viewport_height});
+
+          active.removeClass('active');
+          active.addClass('hidden');
+                     
+          clicked.removeClass('hidden');
+          clicked.addClass('active');
+
+
+      }).slideDown(1000);
+
+      // the one active, take it
       
-      //prevent the page from jumping down to our section.
-      event.preventDefault();
-    });
+      
+
+      return false;
+    }); 
   });
 
 
@@ -32,7 +59,7 @@
 =link_to("IAM 2011", "#content_2011", :class => "Menu_trajectory")
 #viewport
   #holder.clearfix    
-    #content_2009
+    #content_2009.active
       #image
         =image_tag("carmendelaguerra.jpg")    	 
 
@@ -121,7 +148,7 @@
       %p.margin 
         El resultado de la exposición en la ciudad condal, no pudo ser mejor, y se convirtó en el   perfecto broche de oro para esta primera temporada. En palabras de los propios artistas, la   exposición de Barcelona en su conjunto ha sido la que mejor resultado visual ha ofrecido de   entre todas las ciudades visitadas. 
 
-    #content_2010
+    #content_2010.hidden
       #image
         =image_tag("AIM104.jpg")
 
@@ -163,7 +190,7 @@
       #image
         =image_tag("IAM1021.jpg")   
 
-    #content_2011
+    #content_2011.hidden
       #image
         =image_tag("IAM1102.jpg")
 
