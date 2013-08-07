@@ -2,6 +2,8 @@ Iam::Application.routes.draw do
   get "static/trayectory"
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"
+  get "trajectory" => "static#trajectory", :as => "trajectory"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
