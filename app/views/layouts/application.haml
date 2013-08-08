@@ -9,7 +9,7 @@
   %body
     #body_wrapper
       #header
-        .header.container
+        .content
           #logo
             = link_to image_tag("logo.png"), root_path
 
@@ -45,12 +45,12 @@
                 %a(href='#') CONTACTO
 
       #breadcrumb
-        .breadcrumb.container 
+        .content
           = yield(:breadcrumbs)
 
  
-      #slider
-        .slider.container
+      #main_content
+        .container
           = yield
       
       #footer_push

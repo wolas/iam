@@ -16,25 +16,6 @@ body
     weight: 400
   line-height: 1.5em
 
-#body_wrapper
-  min-height: 100%
-  height: auto !important
-  height: 100%
-  margin: 0 auto ($footer_height * -1)
-
-#footer
-  background: black url("layout/footer_background.png") no-repeat center center
-  color: white
-  text-align: center
-  
-  #footer_links
-    padding-top: 40px
-    
-
-#footer,#footer_push
-  height: $footer_height
-  
-
 .clearfix:after
   content: "."
   display: block
@@ -72,7 +53,7 @@ span
   /*Font*/
 
 h1
-  font-size: 24px
+  font-size: 30px
   margin-bottom: 30px
 h2
   font-size: 22px
@@ -94,13 +75,20 @@ p.black
 
   /* INDEX  */ 
 
+#body_wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto ($footer_height * -1)
+  
+
 #header
   border-top: 3px solid rgba(34,34,34,1)
 
-#header,#breadcrumb,#slider,#footer
-  width: 100% 
-.header,.slider,.footer
-  position: relative  
+.content
+  width: 960px
+  margin: 0 auto
+  position: relative
 
 #logo
   padding-top: 20px
@@ -176,9 +164,8 @@ p.black
   margin-bottom: 30px
   color: rgba(102,102,111,1)
   h1
-    font-size: 30px
     color: white
-    margin: 0 0 12px 0
+    margin-bottom: 12px
   p
     font-size: 11px
     letter-spacing: 1px
@@ -189,24 +176,22 @@ p.black
     color: rgba(196,196,196,1)
         
   
-#slider
+#main_content
   background-color: white
   margin-bottom: 20px
 
 
-#address, #time, #expo, #event
-  margin-bottom: 20px
+#footer
+  background: black url("layout/footer_background.png") no-repeat center center
+  color: white
+  text-align: center
   
+  #footer_links
+    padding-top: 40px
+    
 
-#small-footer
-  background-color: rgb(51,51,51)
-  width: 100%
-  .small-footer
-    height: 45px
-    line-height: 45px
-    text-align: center
-    p
-      color: rgb(232,238,208)
+#footer,#footer_push
+  height: $footer_height
 
   
   /* LEGAL  */    
