@@ -1,58 +1,9 @@
 - content_for(:breadcrumbs) do
-  %h1 Trayectoría
+  %h1 Trayectoria
   %p 
     Estas aquí: 
     = link_to "Home", root_path 
     > Trayectoria
-
-// QUITO LA CALSE ACTIVE Y HAGO FADE OUT
-//Y AL QUE CLICKEO LE AÑADO LA CLASE Y HAGO FADE IN
-:javascript
-  $(document).ready(function() {
-    
-    var viewport = $('#viewport');
-    
-    // height of #content_2009 by hand... sorry!
-    viewport.css('height', 4198);
-
-    // Click event for any anchor tag that's href starts with #
-
-    $('a[href^="#"]').click(function(event) {
-       var active_id = $('.active').attr('id');
-      var active = $("#" + active_id );
-      
-      var clicked_id = $(this).attr('href');
-      var clicked = $(clicked_id);
-      var viewpot_height = clicked.height();
-      
-      viewport.height(viewpot_height + 40);
-
-      viewport.slideUp(700, function() {
-          
-          // Fade in new list on callback
-          active.fadeOut(500);
-          clicked.fadeIn(500);
-          
-          // Adjust outer wrapper to fit new list snuggly
-          //viewport.animate({height: viewport_height});
-
-          active.removeClass('active');
-          active.addClass('hidden');
-                     
-          clicked.removeClass('hidden');
-          clicked.addClass('active');
-
-
-      }).slideDown(1000);
-
-      // the one active, take it
-      
-      
-
-      return false;
-    }); 
-  });
-
 
 = link_to("IAM 2009", "#content_2009", :class => "menu_trajectory")
 = link_to("IAM 2010", "#content_2010", :class => "menu_trajectory")
