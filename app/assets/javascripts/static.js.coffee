@@ -28,7 +28,6 @@ $(document).ready ->
       clicked.removeClass "hidden"
       clicked.addClass "active"
     ).slideDown 1000
-    
-    # the one active, take it
+  
     false
 
