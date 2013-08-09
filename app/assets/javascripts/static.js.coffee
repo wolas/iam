@@ -5,9 +5,6 @@
 $(document).ready ->
   viewport = $("#viewport")
   
-  # height of #content_2009 by hand... sorry!
-  viewport.css "height", 4198
-  
   # Click event for any anchor tag that's href starts with #
   $("a[href^=\"#\"]").click (event) ->
     active_id = $(".active").attr("id")
