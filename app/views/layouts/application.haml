@@ -21,10 +21,11 @@
           #menu
             %ul.clearfix
               %li
-                %a(href='#') EL ESPACIO
+                %a{:href => '#'} EL ESPACIO
 
               %li
-                =link_to("IAM")  
+                %a(href='iam') 
+                  IAM  
                   %ul
                     %li
                       =link_to("MANIFESTO", manifesto_path) 
@@ -55,6 +56,7 @@
           = yield
       
       #footer_push
+      
     #footer
       #footer_links
         © iam Gallery Madrid - = link_to "Aviso Legal", legal_path
