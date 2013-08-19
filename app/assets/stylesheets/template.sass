@@ -8,6 +8,8 @@ html,body
 
   /*Main Style*/
 
+
+
 body
   background-color: #fff
   font:
@@ -127,24 +129,35 @@ p.black
 /*MENU*/
 /*-----------------------------------------------------------------------------------------------------------------*/
 #menu
+
   font:
     family: Helvetica
     weight: bold
     size: 12px
 
   ul
+    z-index: 99999
     list-style: none
-    margin-bottom: 10px
 
     li.last
       a:after
         content: ""
+
+    li:hover
+      ul
+        visibility: visible
+        opacity: 100
+
+
 
     li
       float: left
       margin-right: 5px
       font-weight: bold
       position: relative
+      padding-bottom: 10px
+      
+
       a
         color: rgb(51,51,51)
       a:hover
@@ -154,23 +167,41 @@ p.black
         content: "|"
         color: rgb(128,128,128)
         margin: 0 10px
+      
       ul
-        background: #dcdcdc
+        background: white
         position: absolute
         left: -16px
+        border: 1px solid #000000
+        border-top: none
+        opacity: 0
+        visibility: none
+        margin-top: 10px
+
+
         li
           float: none
           margin: 0
-          padding: 5px 40px 5px 10px
-          // height: 30px
-          // line-height: 30px
-          text-align: center
-          border-bottom: 1px solid #8d8d8d
-        li:last-child
-          border-bottom: none  
-            a:after
-              content: ""
-              margin: 0       
+          border-top: 1px solid #e1e1e1
+
+
+          a
+            display: inline-block
+            padding: 5px 60px 0px 15px
+            color: #808080
+
+          a:hover
+            color: black
+            
+          a:after
+            content: ""
+            margin: 0
+            
+        li:first-child
+          border-top: none    
+
+
+                    
 
 #breadcrumb
   background-color: black
@@ -257,5 +288,3 @@ p.border_legal
     background: -ms-linear-gradient(top, #303030 5%, #000000 100%)
     background: linear-gradient(to bottom, #303030 5%, #000000 100%)
     background-color: #303030
-
-
