@@ -3,6 +3,14 @@ $footer_height: 90px
 $link_color: #ccc
 $link_color_hover: #eee
 
+@mixin transition($duration: 2s, $ease: ease-out)
+  -webkit-transition: all $duration $ease
+  -moz-transition: all $duration $ease
+  -o-transition: all $duration $ease
+  transition: all $duration $ease
+
+  
+
 html,body
   height: 100%
 
@@ -110,10 +118,7 @@ p.black
     border-right: none
     background-color: rgba(248,248,248,1)
     margin: 0
-    -webkit-transition: width 1s
-    -moz-transition: width 1s
-    -o-transition: width 1s
-    transition: width 1s
+    @include transition(1s)
   #find:hover
     width: 200px
   #send
@@ -130,7 +135,6 @@ p.black
 /*MENU*/
 /*-----------------------------------------------------------------------------------------------------------------*/
 #menu
-
   font:
     family: Helvetica
     weight: bold
@@ -172,6 +176,7 @@ p.black
         border-top: none
         opacity: 0
         visibility: none
+        @include transition(.3s)
 
         li
           float: none
