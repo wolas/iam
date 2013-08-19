@@ -30,4 +30,15 @@ $(document).ready ->
     ).slideDown 1000
   
     false
+    
+sticky_relocate = ->
+  window_top = $(window).scrollTop()
+  div_top = $("#sticky_anchor").offset().top
+  if window_top > div_top
+    $("#menu_trajectory").addClass "stick"
+  else
+    $("#menu_trajectory").removeClass "stick"
 
+$ ->
+  $(window).scroll sticky_relocate
+  sticky_relocate()
