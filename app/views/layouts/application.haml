@@ -21,14 +21,15 @@
           #menu
             %ul.clearfix
               %li
-                %a{:href => '#'} EL ESPACIO
-              %li
                 %a{:href => root_path} IAM 
                 %ul
                   %li
                     =link_to("Manifesto", manifesto_path) 
                   %li
                     =link_to("Trayectoria", trajectory_path)     
+              %li= link_to "ARTISTAS", artists_path
+              %li= link_to "PAINTINGS", paintings_path
+              
               %li 
                 %a(href='#') EXPOSICIONES 
               
@@ -43,9 +44,22 @@
               
               %li.last
                 %a(href='#') CONTACTO
-
+      
+      - if flash[:alert]
+        .flash.ui-state-error.ui-corner-all
+          .flash_content      
+            %span{:class => "ui-icon ui-icon-alert"}
+            = flash[:alert]
+      
+      - if flash[:notice]
+        .flash.ui-state-highlight.ui-corner-all
+          .flash_content      
+            %span{:class => "ui-icon ui-icon-info"}
+            = flash[:notice]
+            
       #breadcrumb
         .content
+          
           = yield(:breadcrumbs)
 
  

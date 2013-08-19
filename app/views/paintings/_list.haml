@@ -1,0 +1,23 @@
+%table
+  %tr
+    %th Title
+    %th Technique
+    %th Width
+    %th Height
+    %th Finished on
+    %th Price
+    %th
+    %th
+    %th
+
+  - @paintings.each do |painting|
+    %tr
+      %td= painting.title
+      %td= painting.technique
+      %td= painting.width
+      %td= painting.height
+      %td= painting.finished_on
+      %td= painting.price
+      %td= link_to 'Show', painting
+      %td= link_to 'Edit', edit_painting_path(painting)
+      %td= link_to 'Destroy', painting, :method => :delete, :data => { :confirm => 'Are you sure?' }

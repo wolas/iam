@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bio: MyText
+  name: MyString
+  birth: 2013-08-19
+  nationality: MyString
+  web: MyString
+
+two:
+  bio: MyText
+  name: MyString
+  birth: 2013-08-19
+  nationality: MyString
+  web: MyString
