@@ -1,0 +1,25 @@
+%p
+  %b Artist:
+  = @painting.artist_id
+%p
+  %b Title:
+  = @painting.title
+%p
+  %b Technique:
+  = @painting.technique
+%p
+  %b Width:
+  = @painting.width
+%p
+  %b Height:
+  = @painting.height
+%p
+  %b Finished on:
+  = @painting.finished_on
+%p
+  %b Price:
+  = @painting.price
+
+= link_to 'Edit', edit_painting_path(@painting)
+\|
+= link_to 'Back', paintings_path

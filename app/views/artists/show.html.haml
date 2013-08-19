@@ -1,0 +1,31 @@
+- content_for :breadcrumbs do
+  %h1= @artist.name
+  %p 
+    Estas aquí: 
+    = link_to "Home", root_path 
+    > 
+    = link_to "Artists", artists_path
+    > 
+    = @artist.name
+
+%p
+  %b Bio:
+  = @artist.bio
+%p
+  %b Birth:
+  = @artist.birth
+%p
+  %b Nationality:
+  = @artist.nationality
+%p
+  %b Web:
+  = link_to @artist.web, "http://" + @artist.web
+
+
+%h2 Cuadros
+
+= render :partial => "paintings/list"
+
+= link_to 'Edit', edit_artist_path(@artist)
+\|
+= link_to 'Back', artists_path

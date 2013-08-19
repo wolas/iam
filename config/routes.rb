@@ -1,4 +1,8 @@
 Iam::Application.routes.draw do
+  resources :paintings
+
+  resources :artists
+
   get "static/trayectory"
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"

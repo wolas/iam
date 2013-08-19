@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  artist_id: 1
+  title: MyString
+  technique: MyString
+  width: 1.5
+  height: 1.5
+  finished_on: 2013-08-19
+  price: 1.5
+
+two:
+  artist_id: 1
+  title: MyString
+  technique: MyString
+  width: 1.5
+  height: 1.5
+  finished_on: 2013-08-19
+  price: 1.5
