@@ -21,14 +21,14 @@
           #menu
             %ul.clearfix
               %li
-                %a{:href => '#'} EL ESPACIO
-              %li
                 %a{:href => root_path} IAM 
                 %ul
                   %li
                     =link_to("Manifesto", manifesto_path) 
                   %li
                     =link_to("Trayectoria", trajectory_path)     
+              %li= link_to "ARTISTAS", artists_path
+              
               %li 
                 %a(href='#') EXPOSICIONES 
               
