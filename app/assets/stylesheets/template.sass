@@ -123,7 +123,9 @@ p.black
     background: url("icon-search-button.png") no-repeat 0 0
     color: transparent
 
-
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*MENU*/
+/*-----------------------------------------------------------------------------------------------------------------*/
 #menu
   font:
     family: Helvetica
@@ -142,6 +144,7 @@ p.black
       float: left
       margin-right: 5px
       font-weight: bold
+      position: relative
       a
         color: rgb(51,51,51)
       a:hover
@@ -151,6 +154,23 @@ p.black
         content: "|"
         color: rgb(128,128,128)
         margin: 0 10px
+      ul
+        background: #dcdcdc
+        position: absolute
+        left: -16px
+        li
+          float: none
+          margin: 0
+          padding: 5px 40px 5px 10px
+          // height: 30px
+          // line-height: 30px
+          text-align: center
+          border-bottom: 1px solid #8d8d8d
+        li:last-child
+          border-bottom: none  
+            a:after
+              content: ""
+              margin: 0       
 
 #breadcrumb
   background-color: black
