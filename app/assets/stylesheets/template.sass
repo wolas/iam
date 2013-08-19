@@ -144,9 +144,6 @@ p.black
     z-index: 99999
     list-style: none
 
-    li.last
-      a:after
-        content: ""
 
     li:hover
       ul
@@ -173,6 +170,8 @@ p.black
         position: absolute
         left: -11px
         border: 1px solid $black
+        font:
+          weight: normal
         border-top: none
         opacity: 0
         visibility: none
@@ -183,7 +182,7 @@ p.black
           border-top: 1px solid #e1e1e1
 
           a
-            padding: 10px 60px 0px 15px
+            padding: 10px 60px 0px 20px
             border-right: none
             
         li:first-child
