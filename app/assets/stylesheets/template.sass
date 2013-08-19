@@ -52,8 +52,6 @@ a
 a:hover
   color: $link_color_hover
 
-p.margin
-  margin-bottom: 10px
 
 blockquote
   font-style: italic
@@ -84,7 +82,9 @@ p.black
   color: rgba(34,34,34,1)
 
 
-  /* INDEX  */
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*MAIN PAGE*/
+/*-----------------------------------------------------------------------------------------------------------------*/
 
 #body_wrapper
   min-height: 100%
@@ -145,10 +145,9 @@ p.black
     list-style: none
 
 
-    li:hover
+    li:hover > 
       ul
-        visibility: visible
-        opacity: 100
+        display: block
 
     li
       float: left
@@ -173,8 +172,7 @@ p.black
         font:
           weight: normal
         border-top: none
-        opacity: 0
-        visibility: none
+        display: none
         @include transition(.3s)
 
         li
@@ -187,6 +185,10 @@ p.black
             
         li:first-child
           border-top: none         
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*BREADCRUMBS*/
+/*-----------------------------------------------------------------------------------------------------------------*/
 
 #breadcrumb
   background-color: black
