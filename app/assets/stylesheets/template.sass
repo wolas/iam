@@ -1,3 +1,4 @@
+$black: rgb(51,51,51)
 $footer_height: 90px
 $link_color: #ccc
 $link_color_hover: #eee
@@ -148,60 +149,40 @@ p.black
         visibility: visible
         opacity: 100
 
-
-
     li
       float: left
-      margin-right: 5px
-      font-weight: bold
+      margin-right: 10px
       position: relative
-      padding-bottom: 10px
       
-
       a
-        color: rgb(51,51,51)
+        color: $black
+        display: inline-block
+        padding: 0 10px 0px 0px
+        margin-bottom: 10px
+        border-right: 1px solid $black
+        
       a:hover
-        color: rgb(128,128,128)
-      a:after
-        font-weight: normal
-        content: "|"
-        color: rgb(128,128,128)
-        margin: 0 10px
+        color: #808080
       
       ul
         background: white
         position: absolute
-        left: -16px
-        border: 1px solid #000000
+        left: -11px
+        border: 1px solid $black
         border-top: none
         opacity: 0
         visibility: none
-        margin-top: 10px
-
 
         li
           float: none
-          margin: 0
           border-top: 1px solid #e1e1e1
 
-
           a
-            display: inline-block
-            padding: 5px 60px 0px 15px
-            color: #808080
-
-          a:hover
-            color: black
-            
-          a:after
-            content: ""
-            margin: 0
+            padding: 10px 60px 0px 15px
+            border-right: none
             
         li:first-child
-          border-top: none    
-
-
-                    
+          border-top: none         
 
 #breadcrumb
   background-color: black
