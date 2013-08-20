@@ -336,20 +336,38 @@ p.border_legal
       border-bottom: 5px solid $black
 
     hr
-      border-top: 5px solid $black  
+      border-top: 3px solid $black  
 
   .paintings
     h3
       text-transform: uppercase
     ul
       width: 450px
-      display: block
-      float: left
-
       li
+        width: 80px
+        height: 80px
+        display: inline-block
+        position: relative
+        z-index: 1
+        
 
-        img
-          margin: 0 20px 5px 0
+      li:hover >
+        span
+          display: block
+
+          
+        span
+          position: absolute
+          top: 0 
+          left: 0
+          height: 80px
+          width: 80px
+          background: black url(" overlay-painting.png") center center no-repeat
+          z-index: 3
+
+    
+        
+  
             
 
 
