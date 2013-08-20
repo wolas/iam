@@ -8,18 +8,25 @@
     > 
     = @artist.name
 
-%p
-  %b Bio:
-  = @artist.bio
-%p
-  %b Birth:
-  = @artist.birth
-%p
-  %b Nationality:
-  = @artist.nationality
-%p
-  %b Web:
-  = link_to @artist.web, "http://" + @artist.web
+
+.info_artist.clearfix
+  %img{:src => "http://placehold.it/200x200"}
+  .bio
+    %h2= @artist.name
+    %p= @artist.bio
+    %hr/ 
+    .paintings.clearfix     
+      %h3 Obra
+      %ul 
+        - @paintings.in_groups_of(6, false) do |painting|
+          - painting.each do |p|
+            %li
+              %img{:src => "http://www.placehold.it/50x50", :alt => ""}/ 
+      %hr/         
+
+
+
+
 
 
 %h2 Cuadros

@@ -1,27 +1,19 @@
-%h1 Listing artists
+- content_for(:breadcrumbs) do
+  %h1 Artistas
+  %p 
+    You are here: 
+    = link_to "Home", root_path 
+    > Artistas
 
-%table
-  %tr
-    %th Bio
-    %th Name
-    %th Birth
-    %th Nationality
-    %th Web
-    %th
-    %th
-    %th
+- @artists.in_groups_of(4, false) do |artists|    
+  .artists.clearfix
+    - artists.each do |artist|
+      .artist
+        %img{:src => "http://placehold.it/200x200"}
+        .info
+          %h4= link_to artist.name, artist
+          %p= artist.short_bio
+          =link_to "[...]", artist    
 
-  - @artists.each do |artist|
-    %tr
-      %td= artist.bio
-      %td= artist.name
-      %td= artist.birth
-      %td= artist.nationality
-      %td= artist.web
-      %td= link_to 'Show', artist
-      %td= link_to 'Edit', edit_artist_path(artist)
-      %td= link_to 'Destroy', artist, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Artist', new_artist_path

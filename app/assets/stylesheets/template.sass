@@ -11,12 +11,12 @@ $link_color_hover: #eee
 
   
 
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*MAIN STYLE*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+
 html,body
   height: 100%
-
-
-  /*Main Style*/
-
 
 
 body
@@ -25,7 +25,7 @@ body
     family: 'Open Sans', Helvetica, Verdana, sans-serif
     size: 13px
     weight: 400
-  line-height: 1.5em
+  line-height: 21px
 
 table
   width: 100%
@@ -279,7 +279,80 @@ p.border_legal
     background: linear-gradient(to bottom, #303030 5%, #000000 100%)
     background-color: #303030
     
-    
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*ARTISTAS*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+.artist
+  width: 200px 
+  float: left 
+  margin-right: 3px
+
+
+  .info
+    background: white
+    @include transition(.3s)
+    text-align: left
+    padding: 5px 5px 50px 5px
+
+
+  .info:hover
+    background: black
+    color: white
+
+    p
+      color: white 
+
+  h4
+    color: rgba(102,102,111,1)
+    margin-bottom: 10px    
+    font-weight: bold
+    text-transform: uppercase
+      
+
+  p
+    line-height: 18px 
+
+  img
+    width: 200px
+    height: 200px
+    border-top: 5px solid $black
+    display: block
+
+
+.info_artist
+  img
+    float: left
+    display: block
+    margin: 0 25px 0 0  
+
+  .bio
+    width: 730px
+    float: right
+
+    h2
+      margin-bottom: 21px
+      padding-bottom: 20px
+      border-bottom: 5px solid $black
+
+    hr
+      border-top: 5px solid $black  
+
+  .paintings
+    h3
+      text-transform: uppercase
+    ul
+      width: 450px
+      display: block
+      float: left
+
+      li
+
+        img
+          margin: 0 20px 5px 0
+            
+
+
 // DEJAR ABAJO!
 
 .flash
