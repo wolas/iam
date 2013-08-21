@@ -29,7 +29,16 @@ Evento
   - Sponsors
   - Galeria de fotos  
   - Cuadros --> Artistas
+
+Foto
+
+  - id
+  - url
+  - size
+  - father_id: 2
+  - father_type: "Artist"
   
+
 About
 Contacto
 Index

@@ -1,4 +1,4 @@
-= form_for @painting do |f|
+= form_for @painting, :html => { :multipart => true } do |f|
   - if @painting.errors.any?
     #error_explanation.ui-state-error.ui-corner-all
       %h2= "#{pluralize(@painting.errors.count, "error")} prohibited this painting from being saved:"
@@ -6,6 +6,11 @@
         - @painting.errors.full_messages.each do |msg|
           %li= msg
   
+  
+  = f.fields_for :photo_attributes do |form|
+    .field
+      = form.label :image
+      = form.file_field :image
   
   .field
     = f.label :artist_id

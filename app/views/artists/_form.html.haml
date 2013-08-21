@@ -1,11 +1,16 @@
-= form_for @artist do |f|
+= form_for @artist, :html => { :multipart => true } do |f|
   - if @artist.errors.any?
     #error_explanation
       %h2= "#{pluralize(@artist.errors.count, "error")} prohibited this artist from being saved:"
       %ul
         - @artist.errors.full_messages.each do |msg|
           %li= msg
-
+  
+  = f.fields_for :photo_attributes do |form|
+    .field
+      = form.label :image
+      = form.file_field :image
+  
   .field
     = f.label :bio
     = f.text_area :bio

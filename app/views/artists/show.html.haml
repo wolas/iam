@@ -10,7 +10,11 @@
 
 
 .info_artist.clearfix
-  %img{:src => "http://placehold.it/200x200"}
+  - if @artist.photo
+    = image_tag @artist.photo.image.url(:medium) if @artist.photo
+  - else
+    %img{:src => "http://placehold.it/200x200"}
+  
   .bio
     %h2= @artist.name
     %p= @artist.bio
@@ -21,20 +25,13 @@
         - @paintings.in_groups_of(6, false) do |painting|
           .list_of_paintings
             - painting.each do |p|
+              - next unless p.photo
               %li
-                %a.gallery{:href => "http://www.polerasjugosas.cl/images/fuck.gif"}  
-                  %img{:src => "http://www.placehold.it/80x80", :alt => ""}/
+                %a.gallery{:href => p.photo.image.url(:large)}  
+                  = image_tag p.photo.image.url(:thumb)
                 / %span 
     %hr/           
 
-
-
-
-
-
-%h2 Cuadros
-
-= render :partial => "paintings/list"
 
 = link_to 'Edit', edit_artist_path(@artist)
 \|
