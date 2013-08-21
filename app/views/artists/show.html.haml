@@ -19,11 +19,12 @@
       %h3 Obra
       %ul 
         - @paintings.in_groups_of(6, false) do |painting|
-          - painting.each do |p|
-            %li
-              %span
-              %img{:src => "http://www.placehold.it/80x80", :alt => ""}/
-
+          .list_of_paintings
+            - painting.each do |p|
+              %li
+                %a.gallery{:href => "http://www.polerasjugosas.cl/images/fuck.gif"}  
+                  %img{:src => "http://www.placehold.it/80x80", :alt => ""}/
+                / %span 
     %hr/           
 
 
