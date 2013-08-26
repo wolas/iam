@@ -11,8 +11,8 @@ class StaticControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get trayectory" do
-    get :trayectory
+  test "should get trajectory" do
+    get :trajectory
     assert_response :success
   end
 

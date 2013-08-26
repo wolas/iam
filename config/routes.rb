@@ -1,4 +1,6 @@
 Iam::Application.routes.draw do
+  resources :events
+
   resources :paintings
 
   resources :artists
