@@ -29,12 +29,15 @@
                     =link_to("Trayectoria", trajectory_path)     
               %li= link_to "ARTISTAS", artists_path
               %li= link_to "PAINTINGS", paintings_path
-              
-              %li 
-                %a(href='#') EXPOSICIONES 
+            
               
               %li
-                %a(href='#') ACTIVIDADES 
+                %a(href='#') ACTIVIDADES
+                %ul 
+                  %li 
+                    = link_to("Exposiciones", expositions_path) 
+                  %li 
+                    = link_to("Pop-up", popups_path)  
               
               %li 
                 %a(href='#') BLOG

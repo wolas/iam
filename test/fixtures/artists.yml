@@ -13,3 +13,24 @@ two:
   birth: 2013-08-19
   nationality: MyString
   web: MyString
+
+three:
+  bio: "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Restinguet citius, si ardentem acceperit. De hominibus dici non necesse est. Recte dicis.Duo Reges: constructio interrete. Haeret in salebra. Beatus sibi videtur esse moriens.Satis est ad hoc responsum. Hunc vos beatum;"
+  name: Gustavo
+  birth: 2013-08-19
+  nationality: Spanish
+  web: MyString
+
+four:
+  bio: "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Restinguet citius, si ardentem acceperit. De hominibus dici non necesse est. Recte dicis.Duo Reges: constructio interrete. Haeret in salebra. Beatus sibi videtur esse moriens.Satis est ad hoc responsum. Hunc vos beatum;"
+  name: Jake
+  birth: 2013-08-19
+  nationality: Spanish
+  web: MyString
+
+five:
+  bio: "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Restinguet citius, si ardentem acceperit. De hominibus dici non necesse est. Recte dicis.Duo Reges: constructio interrete. Haeret in salebra. Beatus sibi videtur esse moriens.Satis est ad hoc responsum. Hunc vos beatum;"
+  name: Juan
+  birth: 2013-08-19
+  nationality: Spanish
+  web: MyString    

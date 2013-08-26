@@ -1,0 +1,3 @@
+class Exposition < Event
+  
+end

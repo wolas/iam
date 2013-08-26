@@ -6,6 +6,7 @@ class Artist < ActiveRecord::Base
   accepts_nested_attributes_for :photo
 
   def short_bio num=450
+    return "" if bio.blank?
     bio.slice 0, num
   end  
 
