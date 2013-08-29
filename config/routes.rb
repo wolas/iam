@@ -2,10 +2,10 @@ Iam::Application.routes.draw do
  
 
   resources :events
+  get "expositions", to: "events#expositions"
+  get "pop-ups", to: "events#popups", as: "popups"
   resources :paintings
   resources :artists
-  resources :popups
-  resources :expositions
 
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"

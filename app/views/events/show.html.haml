@@ -1,22 +1,36 @@
-%p#notice= notice
+- content_for :breadcrumbs do
+  %h1= @event.name
+  %p 
+    Estas aquí: 
+    = link_to "Home", root_path 
+    >
+    - if @event.category.eql? "Exposition"
+      = link_to "Expositions", expositions_path
+    - else
+      = link_to "Pop-Ups", popups_path
+    > 
+    = @event.name
 
-%p
-  %b Name:
-  = @event.name
-%p
-  %b Summary:
-  = @event.summary
-%p
-  %b Start:
-  = @event.start
-%p
-  %b Stop:
-  = @event.stop
 
-%p
-  %b Place:
-  = @event.place
-
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+.info_event.clearfix
+  - if @event.photo
+    = image_tag @event.photo.image.url(:medium)
+  - else
+    %img{:src => "http://placehold.it/200x200"}
+  
+  .bio
+    %h2= @event.name
+    %p= @event.summary
+    %hr/ 
+    .paintings.clearfix     
+      %h3 Obra
+      %ul 
+        - @photos.in_groups_of(6, false) do |photos|
+          .list_of_paintings
+            - photos.each do |p|
+              - next unless p
+              %li
+                %a.gallery{:href => p.image.url(:large)}  
+                  = image_tag p.image.url(:thumb)
+                / %span 
+    %hr/           

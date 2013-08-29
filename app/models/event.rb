@@ -6,4 +6,9 @@ class Event < ActiveRecord::Base
   
   accepts_nested_attributes_for :photo
 
+  def short_summary num=450
+    return "" if summary.blank?
+    summary.slice 0, num
+  end  
+
 end

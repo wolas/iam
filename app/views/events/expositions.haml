@@ -1,0 +1,11 @@
+- content_for(:breadcrumbs) do
+  %h1 Expositions
+  %p 
+    You are here: 
+    = link_to "Home", root_path 
+    > Expositions
+
+= render :partial => "list", :locals => {:events => @expositions}
+
+
+
