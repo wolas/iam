@@ -2,9 +2,13 @@ Iam::Application.routes.draw do
  
 
   resources :events
+<<<<<<< HEAD
+=======
+  get "expositions", to: "events#expositions"
+  get "pop-ups", to: "events#popups", as: "popups"
+  resources :paintings
+>>>>>>> 93f38867682dad00c544cfb86470de95b4a38661
   resources :artists
-  resources :popups
-  resources :expositions
 
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"

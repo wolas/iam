@@ -1,6 +1,15 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+
+  def expositions
+    @expositions = Event.find_all_by_category "Exposition"
+  end
+
+  def popups
+    @popups = Event.find_all_by_category "Popup"
+  end
+
   # GET /events
   # GET /events.json
   def index
@@ -10,6 +19,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @photos = @event.photos
   end
 
   # GET /events/new
@@ -26,8 +36,12 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
+
+
     respond_to do |format|
       if @event.save
+        params[:event][:photos].each { |file| @event.photos.create :image => file }
+        
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
       else
@@ -42,7 +56,9 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        params[:event][:photos].each { |file| @event.photos.create :image => file }
+
+        format.html { redirect_to @event, notice: "#{event_params[:type]} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +85,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :summary, :start, :stop, :category, :place, :photo_attributes => [:id, :artist_id, :image])
+      params.require(:event).permit(:name, :summary, :start, :stop, :category, :place, :photo_attributes => [:id, :event_id, :image])
     end
 end

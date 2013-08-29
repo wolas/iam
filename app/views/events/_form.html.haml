@@ -13,8 +13,12 @@
       = form.file_field :image 
 
   .field
-    = f.label :type
-    = f.select :type, [["Exposicion", "Exposition"], ["Pop-up", "Popup"]]
+    = f.label :photos
+    = f.file_field :photos, :multiple => true   
+
+  .field
+    = f.label :category
+    = f.select :category, [["Exposicion", "Exposition"], ["Pop-up", "Popup"]]
               
 
   .field
@@ -29,9 +33,7 @@
   .field
     = f.label :stop
     = f.datetime_select :stop
-  .field
-    = f.label :category
-    = f.text_field :category
+
   .field
     = f.label :place
     = f.text_field :place

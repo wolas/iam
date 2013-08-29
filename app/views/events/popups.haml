@@ -1,0 +1,11 @@
+- content_for(:breadcrumbs) do
+  %h1 Pop-Ups
+  %p 
+    You are here: 
+    = link_to "Home", root_path 
+    > Pop-Ups
+
+= render :partial => "list", :locals => {:events => @popups}
+
+
+

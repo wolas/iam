@@ -2,11 +2,11 @@
 
 %table
   %tr
+    %th Category
     %th Name
     %th Summary
     %th Start
     %th Stop
-    %th Category
     %th Place
     %th
     %th
@@ -14,11 +14,11 @@
 
   - @events.each do |event|
     %tr
+      %td= event.category
       %td= event.name
-      %td= event.summary
+      %td= event.short_summary(50)
       %td= event.start
       %td= event.stop
-      %td= event.category
       %td= event.place
       %td= link_to 'Show', event
       %td= link_to 'Edit', edit_event_path(event)

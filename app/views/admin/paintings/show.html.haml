@@ -1,3 +1,8 @@
+- if @painting.photo
+  = image_tag @painting.photo.image.url(:medium)
+- else
+  %img{:src => "http://placehold.it/200x200"}
+
 %p
   %b Artist:
   = @painting.artist_id
