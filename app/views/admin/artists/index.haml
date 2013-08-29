@@ -1,0 +1,23 @@
+- content_for(:breadcrumbs) do
+  %h1 Artistas
+  %p
+    You are here:
+    = link_to "Admin", admin_path
+    > Artistas
+
+- @artists.in_groups_of(4, false) do |artists|
+  .artists.clearfix
+    - artists.each do |artist|
+      .artist
+        - if artist.photo
+          = image_tag artist.photo.image.url(:medium) if artist.photo
+        - else
+          %img{:src => "http://placehold.it/200x200"}
+        
+        .info
+          %h4= link_to artist.name, [:admin, artist]
+          %p= artist.short_bio
+          =link_to "[...]", [:admin, artist]
+
+
+
