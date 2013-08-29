@@ -17,39 +17,9 @@
               %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
               %input{:type => "submit", :id => "send", :name =>"send"}  
           
-<<<<<<< HEAD
+
           = render :partial => @admin ? "layouts/admin_menu" : "layouts/app_menu"
-=======
-          #menu
-            %ul.clearfix
-              %li
-                %a{:href => root_path} IAM 
-                %ul
-                  %li
-                    =link_to("Manifesto", manifesto_path) 
-                  %li
-                    =link_to("Trayectoria", trajectory_path)     
-              %li= link_to "ARTISTAS", artists_path
-              %li= link_to "PAINTINGS", paintings_path
-            
-              
-              %li
-                = link_to("ACTIVIDADES", events_path) 
-                %ul 
-                  %li 
-                    = link_to("Exposiciones", expositions_path) 
-                  %li 
-                    = link_to("Pop-up", popups_path)  
-              
-              %li 
-                %a(href='#') BLOG
-              
-              %li 
-                %a(href='#') SHOP
-              
-              %li.last
-                %a(href='#') CONTACTO
->>>>>>> 93f38867682dad00c544cfb86470de95b4a38661
+
       
       - if flash[:alert]
         .flash.ui-state-error.ui-corner-all
