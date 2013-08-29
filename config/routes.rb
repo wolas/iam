@@ -1,7 +1,6 @@
 Iam::Application.routes.draw do
  
-  get "popups/index"
-  get "popups/show"
+
   resources :events
   resources :paintings
   resources :artists
