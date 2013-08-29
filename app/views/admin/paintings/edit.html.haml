@@ -1,0 +1,17 @@
+- content_for(:breadcrumbs) do
+  %h1 Editing Painting
+  %p 
+    Estas aquí: 
+    = link_to "Admin", admin_path 
+    > Editing painting
+
+
+#links
+  = link_to 'Show', [:admin, @painting]
+  \|
+  = link_to 'Back', admin_paintings_path
+
+
+= render 'form'
+
+

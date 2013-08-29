@@ -1,0 +1,28 @@
+#menu
+  %ul.clearfix
+    %li
+      %a{:href => root_path} IAM 
+      %ul
+        %li
+          =link_to("Manifesto", manifesto_path) 
+        %li
+          =link_to("Trayectoria", trajectory_path)     
+    %li= link_to "ARTISTAS", artists_path
+
+  
+    %li
+      %a(href='#') ACTIVIDADES
+      %ul 
+        %li 
+          = link_to("Exposiciones", expositions_path) 
+        %li 
+          = link_to("Pop-up", popups_path)  
+  
+    %li 
+      %a(href='#') BLOG
+  
+    %li 
+      %a(href='#') SHOP
+  
+    %li.last
+      %a(href='#') CONTACTO

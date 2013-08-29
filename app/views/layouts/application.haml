@@ -10,43 +10,14 @@
     #body_wrapper
       #header
         .content
-          #logo
-            = link_to image_tag("logo.png"), root_path
+          #logo= link_to image_tag("logo.png"), root_path
 
           #search{:class => "fr"}
             %form{:action => "#"}
               %input{:type => "text", :id => "find", :name => "find", :placeholder => "search site"}
               %input{:type => "submit", :id => "send", :name =>"send"}  
           
-          #menu
-            %ul.clearfix
-              %li
-                %a{:href => root_path} IAM 
-                %ul
-                  %li
-                    =link_to("Manifesto", manifesto_path) 
-                  %li
-                    =link_to("Trayectoria", trajectory_path)     
-              %li= link_to "ARTISTAS", artists_path
-              %li= link_to "PAINTINGS", paintings_path
-            
-              
-              %li
-                %a(href='#') ACTIVIDADES
-                %ul 
-                  %li 
-                    = link_to("Exposiciones", expositions_path) 
-                  %li 
-                    = link_to("Pop-up", popups_path)  
-              
-              %li 
-                %a(href='#') BLOG
-              
-              %li 
-                %a(href='#') SHOP
-              
-              %li.last
-                %a(href='#') CONTACTO
+          = render :partial => @admin ? "layouts/admin_menu" : "layouts/app_menu"
       
       - if flash[:alert]
         .flash.ui-state-error.ui-corner-all

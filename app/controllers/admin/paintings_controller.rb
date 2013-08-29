@@ -1,4 +1,4 @@
-class PaintingsController < ApplicationController
+class Admin::PaintingsController < AdminController
   before_action :set_painting, only: [:show, :edit, :update, :destroy]
 
   # GET /paintings
@@ -28,11 +28,9 @@ class PaintingsController < ApplicationController
     
     respond_to do |format|
       if @painting.save
-        format.html { redirect_to @painting, notice: 'Painting was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @painting }
+        format.html { redirect_to [:admin, @painting], notice: 'Painting was successfully created.' }
       else
         format.html { render action: 'new' }
-        format.json { render json: @painting.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +40,9 @@ class PaintingsController < ApplicationController
   def update
     respond_to do |format|
       if @painting.update(painting_params)
-        format.html { redirect_to @painting, notice: 'Painting was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to [:admin, @painting], notice: 'Painting was successfully updated.' }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @painting.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,8 +52,7 @@ class PaintingsController < ApplicationController
   def destroy
     @painting.destroy
     respond_to do |format|
-      format.html { redirect_to paintings_url }
-      format.json { head :no_content }
+      format.html { redirect_to admin_paintings_url }
     end
   end
 

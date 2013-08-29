@@ -18,6 +18,6 @@
       %td= painting.height
       %td= painting.finished_on
       %td= painting.price
-      %td= link_to 'Show', painting
-      %td= link_to 'Edit', edit_painting_path(painting)
-      %td= link_to 'Destroy', painting, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', [:admin, painting]
+      %td= link_to 'Edit', edit_admin_painting_path(painting)
+      %td= link_to 'Destroy', [:admin, painting], :method => :delete, :data => { :confirm => 'Are you sure?' }

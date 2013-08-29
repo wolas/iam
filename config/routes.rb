@@ -2,7 +2,6 @@ Iam::Application.routes.draw do
  
 
   resources :events
-  resources :paintings
   resources :artists
   resources :popups
   resources :expositions
@@ -10,8 +9,6 @@ Iam::Application.routes.draw do
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"
   get "trajectory" => "static#trajectory", :as => "trajectory"
-  
-
   
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -63,9 +60,15 @@ Iam::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  get "admin" => "admin#index"
+  
+  namespace :admin do
+    # Directs /admin/products/* to Admin::ProductsController
+    # (app/controllers/admin/products_controller.rb)
+    resources :paintings
+    resources :artists
+    resources :events
+    resources :popups
+    resources :expositions
+  end
 end
