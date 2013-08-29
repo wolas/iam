@@ -4,5 +4,7 @@ class ExpositionsController < ApplicationController
   end
 
   def show
+    @exposition = Exposition.find(params[:id])
+    @photos = @exposition.photos
   end
 end

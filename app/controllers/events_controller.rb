@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: "#{event_params[:type]} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +69,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :summary, :start, :stop, :category, :place, :photo_attributes => [:id, :artist_id, :image])
+      params.require(:event).permit(:name, :summary, :start, :stop, :type, :place, :photo_attributes => [:id, :event_id, :image])
     end
 end
