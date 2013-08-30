@@ -5,19 +5,33 @@
     = link_to "Admin", admin_path
     > Artistas
 
-- @artists.in_groups_of(4, false) do |artists|
-  .artists.clearfix
-    - artists.each do |artist|
-      .artist
-        - if artist.photo
-          = image_tag artist.photo.image.url(:medium) if artist.photo
-        - else
-          %img{:src => "http://placehold.it/200x200"}
-        
-        .info
-          %h4= link_to artist.name, [:admin, artist]
-          %p= artist.short_bio
-          =link_to "[...]", [:admin, artist]
+#links
+  = link_to "New artist", new_admin_artist_path
 
+%table
+  %thead
+    %th
+    %th Name
+    %th Paintings
+    %th Web
+    %th
+  %tboby
+    - @artists.each do |artist|
+      %tr
+        %td
+          - if artist.photo
+            = image_tag artist.photo.image.url(:thumb), width: 50
+          - else
+            = image_tag "http://www.placehold.it/80x80", width: 50
+          
+        %td= artist.name
+        %td= artist.paintings.count
+        %td= link_to artist.web, "http://#{artist.web}", target: "_blank"
+        %td
+          = link_to "Show", [:admin, artist]
+          |
+          = link_to "Edit", edit_admin_artist_path(artist)
+          |
+          = link_to 'Destroy', [:admin, artist], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 

@@ -29,11 +29,9 @@ class Admin::ArtistsController < AdminController
 
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @artist }
+        format.html { redirect_to [:admin, @artist], notice: 'Artist was successfully created.' }
       else
         format.html { render action: 'new' }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,11 +41,9 @@ class Admin::ArtistsController < AdminController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
-        format.html { redirect_to @artist, notice: 'Artist was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to [:admin, @artist], notice: 'Artist was successfully updated.' }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,8 +53,7 @@ class Admin::ArtistsController < AdminController
   def destroy
     @artist.destroy
     respond_to do |format|
-      format.html { redirect_to artists_url }
-      format.json { head :no_content }
+      format.html { redirect_to admin_artists_url }
     end
   end
 

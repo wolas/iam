@@ -1,5 +1,15 @@
-%h1 New artist
+- content_for :breadcrumbs do
+  %h1= @artist.name
+  %p
+    Estas aquí:
+    = link_to "Home", admin_path
+    >
+    = link_to "Artists", admin_artists_path
+    >
+    New Artist
+
+#links
+  = link_to 'Back', admin_artists_path
 
 = render 'form'
 
-= link_to 'Back', admin_artists_path
