@@ -3,11 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  $("a.gallery").colorbox({
-      rel: 'group1'
-      
-
-    })
+  
+  $("a.gallery").colorbox({rel: 'group1'})
+  alert("balls")
 
 
   viewport = $("#viewport")
