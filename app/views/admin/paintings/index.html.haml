@@ -1,7 +1,19 @@
-%h1 Listing paintings
+- content_for :breadcrumbs do
+  %h1= @artist.name
+  %p
+    Estas aquí:
+    = link_to "Home", admin_path
+    >
+    = link_to "Artists", admin_artists_path
+    >
+    = link_to @artist.name, admin_artist_path(@artist)
+    >
+    Paintings
+
+#links
+  = link_to 'New Painting', new_admin_artist_painting_path(@artist)
 
 = render :partial => "list"
 
 %br
 
-= link_to 'New Painting', new_admin_painting_path

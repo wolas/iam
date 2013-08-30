@@ -1,15 +1,24 @@
-- content_for(:breadcrumbs) do
-  %h1 Editing Painting
-  %p 
-    Estas aquí: 
-    = link_to "Admin", admin_path 
-    > Editing painting
+- content_for :breadcrumbs do
+  %h1= @artist.name
+  %p
+    Estas aquí:
+    = link_to "Home", admin_path
+    >
+    = link_to "Artists", admin_artists_path
+    >
+    = link_to @artist.name, admin_artist_path(@artist)
+    >
+    = link_to "Paintings", admin_artist_paintings_path(@artist)
+    >
+    Editing
+    = @painting.title
+
 
 
 #links
-  = link_to 'Show', [:admin, @painting]
+  = link_to 'Show', [:admin, @artist, @painting]
   \|
-  = link_to 'Back', admin_paintings_path
+  = link_to 'Back', admin_artist_paintings_path(@artist)
 
 
 = render 'form'

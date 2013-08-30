@@ -66,8 +66,11 @@ Iam::Application.routes.draw do
     # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
     
-    resources :paintings
-    resources :artists
+    
+    resources :artists do
+      resources :paintings
+    end
+    
     resources :events
     resources :popups
     resources :expositions

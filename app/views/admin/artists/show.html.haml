@@ -21,17 +21,19 @@
   
   .bio
     %h2= @artist.name
-    %p= @artist.bio
+    != RedCloth.new(@artist.bio).to_html
+    
     %hr/
-    .paintings.clearfix
+    
+    .gallery_container.clearfix
       %h3 Obra
-      %ul
-        - @paintings.in_groups_of(6, false) do |painting|
-          .list_of_paintings
-            - painting.each do |p|
-              - next unless p.photo
-              %li
-                %a.gallery{:href => p.photo.image.url(:large)}
-                  = image_tag p.photo.image.url(:thumb)
-                / %span
+      
+      - @paintings.in_groups_of(6, false) do |painting|
+        .list_of_images
+          
+          - painting.each do |p|
+            - next unless p.photo
+            .image_item
+              = link_to image_tag(p.photo.image.url(:thumb)), [:admin, @artist, p]
+              %span= p.title
     %hr/ 
