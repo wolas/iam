@@ -1,4 +1,13 @@
-%h1 Listing events
+- content_for :breadcrumbs do
+  %h1 All Events
+  %p 
+    Estas aquí: 
+    = link_to "Admin", admin_path 
+    >
+    Events
+
+#links
+  = link_to 'New Event', new_admin_event_path
 
 %table
   %tr
@@ -20,10 +29,6 @@
       %td= event.start
       %td= event.stop
       %td= event.place
-      %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Event', new_event_path
+      %td= link_to 'Show', admin_event_path(event)
+      %td= link_to 'Edit', edit_admin_event_path(event)
+      %td= link_to 'Destroy',[:admin, event], :method => :delete, :data => { :confirm => 'Are you sure?' }

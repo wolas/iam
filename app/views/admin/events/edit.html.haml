@@ -1,7 +1,21 @@
-%h1 Editing event
+- content_for :breadcrumbs do
+  %h1= @event.name
+  %p 
+    Estas aquí: 
+    = link_to "Admin", admin_path 
+    >
+    = link_to "Events", admin_events_path
+    >
+    Editing 
+    = @event.name
+
+
+
+
+#links
+  = link_to 'Show', admin_event_path(@event)
+  \|
+  = link_to 'Back', admin_events_path
+
 
 = render 'form'
-
-= link_to 'Show', @event
-\|
-= link_to 'Back', events_path

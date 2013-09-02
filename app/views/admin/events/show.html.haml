@@ -2,15 +2,17 @@
   %h1= @event.name
   %p 
     Estas aquí: 
-    = link_to "Home", root_path 
+    = link_to "Admin", admin_path 
     >
-    - if @event.category.eql? "Exposition"
-      = link_to "Expositions", expositions_path
-    - else
-      = link_to "Pop-Ups", popups_path
-    > 
+    = link_to "Events", admin_events_path
+    >
     = @event.name
 
+
+#links
+  = link_to "Edit", edit_admin_event_path(@event)
+  |
+  = link_to "Destroy", [:admin, @event], method: :delete, confirm: "Are you sure?"
 
 .info_event.clearfix
   - if @event.photo

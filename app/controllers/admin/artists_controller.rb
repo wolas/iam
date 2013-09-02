@@ -29,7 +29,7 @@ class Admin::ArtistsController < AdminController
 
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to [:admin, @artist], notice: 'Artist was successfully created.' }
+        format.html { redirect_to admin_artist_path(@artist), notice: 'Artist was successfully created.' }
       else
         format.html { render action: 'new' }
       end
