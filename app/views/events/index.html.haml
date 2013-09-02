@@ -11,7 +11,6 @@
 
 %table
   %tr
-    %th Photo
     %th Category
     %th Name
     %th Summary
@@ -24,11 +23,6 @@
 
   - @events.each do |event|
     %tr
-      %td
-        -if event.photo
-          = image_tag event.photo.image.url(:thumb), width: 50
-        -else
-          = image_tag "http://www.placehold.it/80*80", width: 50  
       %td= event.category
       %td= event.name
       %td= event.short_summary(50)

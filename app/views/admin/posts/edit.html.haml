@@ -1,0 +1,19 @@
+- content_for(:breadcrumbs) do
+  %h1 Editing post
+  %p 
+    You are here: 
+    = link_to "Admin", admin_path 
+    >
+    Editing
+    >
+    = @post.title
+
+
+#links
+  = link_to 'Show', admin_posts_path(@post)
+  \|
+  = link_to 'Back', admin_posts_path
+
+
+= render 'form'
+
