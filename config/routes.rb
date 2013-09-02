@@ -1,6 +1,8 @@
 Iam::Application.routes.draw do
  
 
+  resources :posts
+
   resources :events
   get "expositions", to: "events#expositions"
   get "pop-ups", to: "events#popups", as: "popups"
