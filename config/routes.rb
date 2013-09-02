@@ -79,5 +79,6 @@ Iam::Application.routes.draw do
     resources :events
     resources :popups
     resources :expositions
+    resources :posts
   end
 end

@@ -28,7 +28,7 @@
         %td= artist.paintings.count
         %td= link_to artist.web, "http://#{artist.web}", target: "_blank"
         %td
-          = link_to "Show", [:admin, artist]
+          = link_to "Show", admin_artist_path(artist)
           |
           = link_to "Edit", edit_admin_artist_path(artist)
           |

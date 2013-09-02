@@ -8,6 +8,6 @@
           %img{:src => "http://placehold.it/200x200"}
           
         .info
-          %h4= link_to event.name, event
+          %h4= link_to event.name, admin_event_path(event)
           %p= event.short_summary 
-          =link_to "[...]", event
+          = link_to "[...]", admin_event_path(event)

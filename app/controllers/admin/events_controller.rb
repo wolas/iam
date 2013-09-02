@@ -1,14 +1,5 @@
 class Admin::EventsController < AdminController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
-  
-  def expositions
-    @expositions = Event.find_all_by_category "Exposition"
-  end
-  
-  def popups
-    @popups = Event.find_all_by_category "Popup"
-  end
   
   # GET /events
   # GET /events.json
@@ -54,9 +45,9 @@ class Admin::EventsController < AdminController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        params[:event][:photos].each { |file| @event.photos.create :image => file }
+        params[:event][:photos].each { |file| @event.photos.create :image => file } if params[:event][:photos]
         
-        format.html { redirect_to @event, notice: "#{event_params[:type]} was successfully updated." }
+        format.html { redirect_to admin_event_path(@event), notice: "#{event_params[:type]} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,7 +61,7 @@ class Admin::EventsController < AdminController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to admin_events_url }
       format.json { head :no_content }
     end
   end
