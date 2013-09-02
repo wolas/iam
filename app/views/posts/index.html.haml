@@ -1,23 +1,23 @@
-%h1 Listing posts
+- content_for(:breadcrumbs) do
+  %h1 Blog
+  %p 
+    You are here: 
+    = link_to "Home", root_path 
+    > Blog
 
-%table
-  %tr
-    %th Title
-    %th Body
-    %th Posted on
-    %th
-    %th
-    %th
 
+#blog
   - @posts.each do |post|
-    %tr
-      %td= post.title
-      %td= post.body
-      %td= post.posted_on
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .post_item.clearfix
+      .post_date
+        .post_day= post.posted_on.day
+        .post_month= post.posted_on.strftime("%b").upcase
+        .post_year= post.posted_on.year
+      .post
+        %h2= link_to post.title, post
+        .post_body!= RedCloth.new(post.body).to_html
 
-%br
+
+
 
 = link_to 'New Post', new_post_path

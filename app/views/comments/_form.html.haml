@@ -5,21 +5,20 @@
       %ul
         - @comment.errors.full_messages.each do |msg|
           %li= msg
-
+  
+  = hidden_field_tag 'comment[post_id]', @post.id
+    
   .field
-    = f.label :author_name
     = f.text_field :author_name
+    = f.label :author_name
   .field
-    = f.label :author_email
     = f.text_field :author_email
+    = f.label :author_email
   .field
-    = f.label :author_web
     = f.text_field :author_web
+    = f.label :author_web
   .field
-    = f.label :body
     = f.text_area :body
-  .field
-    = f.label :post_id
-    = f.number_field :post_id
-  .actions
     = f.submit 'Save'
+  .actions
+

@@ -1,5 +1,17 @@
-%h1 New comment
+- content_for(:breadcrumbs) do
+  %h1= @post.title
+  %p 
+    You are here: 
+    = link_to "Home", root_path 
+    >
+    = link_to "Blog", posts_path
+    >
+    = link_to @post.title, @post
+    >
+    New Comment
+
+#links
+  = link_to 'Back', comments_path
 
 = render 'form'
 
-= link_to 'Back', comments_path
