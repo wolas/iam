@@ -1,11 +1,16 @@
 Iam::Application.routes.draw do
- 
-
-  resources :events
+  
+  resources :comments
+  resources :posts
+  
+  get "events", to: "events#index"
+  get "events/:id", to: "events#show", as: "event"
   get "expositions", to: "events#expositions"
   get "pop-ups", to: "events#popups", as: "popups"
-  resources :artists
-
+  
+  get "artists", to: "artists#index"
+  get "artists/:id", to: "artists#show", as: "artist"
+  
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"
   get "trajectory" => "static#trajectory", :as => "trajectory"

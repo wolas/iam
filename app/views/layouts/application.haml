@@ -21,13 +21,13 @@
           = render :partial => @admin ? "layouts/admin_menu" : "layouts/app_menu"
 
       
-      - if flash[:alert]
+      - if alert
         .flash.ui-state-error.ui-corner-all
           .flash_content      
             %span{:class => "ui-icon ui-icon-alert"}
             = flash[:alert]
       
-      - if flash[:notice]
+      - if notice
         .flash.ui-state-highlight.ui-corner-all
           .flash_content      
             %span{:class => "ui-icon ui-icon-info"}

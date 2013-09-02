@@ -1,0 +1,13 @@
+#comments.clearfix
+  .replies
+    = @comments.count
+    %span replies
+    
+  .comment_list
+    - @comments.each do |comment|
+      .comment.clearfix
+        .comment_face= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.author_email.downcase)}.png?s=36&d=http://b.vimeocdn.com/ps/242/130/2421306_300.jpg", width: 36
+        .comment_info
+          .comment_author= comment.author_name
+          .comment_date= comment.created_at
+          .comment_body!= RedCloth.new(comment.body.to_s).to_html

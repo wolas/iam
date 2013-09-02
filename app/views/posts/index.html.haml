@@ -1,0 +1,23 @@
+- content_for(:breadcrumbs) do
+  %h1 Blog
+  %p 
+    You are here: 
+    = link_to "Home", root_path 
+    > Blog
+
+
+#blog
+  - @posts.each do |post|
+    .post_item.clearfix
+      .post_date
+        .post_day= post.posted_on.day
+        .post_month= post.posted_on.strftime("%b").upcase
+        .post_year= post.posted_on.year
+      .post
+        %h2= link_to post.title, post
+        .post_body!= RedCloth.new(post.body).to_html
+
+
+
+
+= link_to 'New Post', new_post_path
