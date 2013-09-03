@@ -25,3 +25,5 @@
     %h2= link_to @post.title, @post
     .post_body!= RedCloth.new(@post.body).to_html
 
+
+= render :partial => "admin/comments/list"

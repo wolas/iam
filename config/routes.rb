@@ -80,6 +80,9 @@ Iam::Application.routes.draw do
     resources :events
     resources :popups
     resources :expositions
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
+    
   end
 end

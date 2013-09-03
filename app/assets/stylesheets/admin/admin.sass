@@ -15,7 +15,7 @@ table
   width: 100%
   thead
     text-align: center
-    
+
   
   tbody
     tr
@@ -65,8 +65,57 @@ table
     color: green
     
     
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*POSTS*/
+/*-----------------------------------------------------------------------------------------------------------------*/    
     
+.post_item        
+  .post_date
+    text-align: center
+    float: left
+    width: 80px
     
+    .post_day
+      background-color: $black
+      border-radius: 60px
+      width: 60px
+      height: 60px
+      line-height: 60px
+      color: $white
+      font-size: 30px
+    .post_month, .post_year
+      width: 60px
+      color: $grey
+      line-height: 11px
+      font-size: 11px
+    .post_month
+      margin-top: 5px
+  .post
+    width: 880px
+    float: right
+    border-bottom: 3px solid $black
+    padding-bottom: 80px
+    
+    h2
+      padding-top: 10px
+      a
+        color: $black
+        
+    .post_body
+      font-size: 13px
+      line-height: 21px
+      margin: 15px 0
+      
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*Comments*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+.comment_list
+  margin-left: 80px
+
+  .comment
+    padding-top: 10px
+    border-bottom: 1px solid $black
+
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus
   border: 1px solid #aaa
   color: #555
@@ -91,3 +140,5 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   
     textarea, input, label
       border-color: red
+
+

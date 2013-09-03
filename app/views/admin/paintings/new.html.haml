@@ -2,7 +2,7 @@
   %h1= @artist.name
   %p
     Estas aquí:
-    = link_to "Home", admin_path
+    = link_to "Admin", admin_path
     >
     = link_to "Artists", admin_artists_path
     >
@@ -15,7 +15,6 @@
 
 
 #links
-  = link_to 'Back', admin_paintings_path
-
+  = link_to 'Back', admin_artist_paintings_path
 = render 'form'
 
