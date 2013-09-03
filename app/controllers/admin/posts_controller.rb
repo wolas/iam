@@ -30,11 +30,11 @@ class Admin::PostsController < AdminController
 
     respond_to do |format|
       if @post.save
+        params[:post][:photos].each { |file| @post.photos.create :image => file }  
+          
         format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @post }
       else
         format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end

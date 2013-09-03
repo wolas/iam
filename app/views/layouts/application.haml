@@ -47,29 +47,13 @@
   
               %li.last
                 %a(href='#') CONTACTO
-
-      
-      - if alert
-        .flash.ui-state-error.ui-corner-all
-          .flash_content      
-            %span{:class => "ui-icon ui-icon-alert"}
-            = flash[:alert]
-      
-      - if notice
-        .flash.ui-state-highlight.ui-corner-all
-          .flash_content      
-            %span{:class => "ui-icon ui-icon-info"}
-            = flash[:notice]
             
       #breadcrumb
-        .content
-          
-          = yield(:breadcrumbs)
+        .content= yield(:breadcrumbs)
 
  
       #main_content.clearfix
-        .container
-          = yield
+        .container= yield
       
       #footer_push
       

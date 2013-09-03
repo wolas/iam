@@ -5,6 +5,15 @@
     = link_to "Home", root_path 
     > Blog
 
+
+#blog_sidebar
+  %p RECENT POSTS
+  
+  %ul
+    - @recent_posts.each do |post|
+      %li
+        = post.short_title
+  
   
 #blog
   - @posts.each do |post|

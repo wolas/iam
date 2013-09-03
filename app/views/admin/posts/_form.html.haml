@@ -6,6 +6,15 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
+  = f.fields_for :photo_attributes do |form|
+    .field
+      = form.label :image
+      = form.file_field :image 
+
+  .field
+    = f.label :photos
+    = f.file_field :photos, :multiple => true 
+
   .field
     = f.label :title
     = f.text_field :title

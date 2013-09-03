@@ -10,7 +10,7 @@
 
 .info_event.clearfix
   - if @event.photo
-    = image_tag @event.photo.image.url(:medium)
+    .artist_avatar= image_tag @event.photo.image.url(:medium)
   - else
     %img{:src => "http://placehold.it/200x200"}
   
@@ -18,16 +18,13 @@
     %h2= @event.name
     %p= @event.summary
     %hr/ 
-    .paintings.clearfix     
-      %h3 Obra
-      %ul 
-        -if @photos
-          - @photos.in_groups_of(6, false) do |photos|
-            .list_of_paintings
-              - photos.each do |p|
-                - next unless p
-                %li
-                  %a.gallery{:href => p.image.url(:large)}  
-                    = image_tag p.image.url(:thumb)
-                  / %span 
-      %hr/
+    %h3 Fotos
+    
+    
+    
+    .photos
+      - @photos.in_groups_of(4, false) do |photos|
+        .photos_row.clearfix 
+          - photos.each do |p|
+            = link_to image_tag(p.image.url(:medium), width: "150px"), p.image.url(:large), class: "gallery"
+    %hr/
