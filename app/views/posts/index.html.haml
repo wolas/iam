@@ -23,6 +23,13 @@
         .post_month= post.posted_on.strftime("%b").upcase
         .post_year= post.posted_on.year
       .post
-        = image_tag post.photo.image.url(:width_500) if post.photo
+        = link_to image_tag(post.photo.image.url(:width_500)), post if post.photo
         %h2= link_to post.title, post
-        .post_body!= RedCloth.new(post.body).to_html
+        .post_body
+          != RedCloth.new(post.body).to_html
+          
+          .post_photos
+            = render :partial => "photos/list", :locals => {:photos => post.photos, :num => 3}
+            
+          .post_social
+            = link_to pluralize(post.comments.count, "comment"), post_path(post, anchor: "respond")

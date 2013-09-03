@@ -45,6 +45,8 @@ class Admin::PostsController < AdminController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        params[:post][:photos].each { |file| @post.photos.create :image => file }
+        
         format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else

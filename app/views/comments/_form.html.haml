@@ -1,4 +1,3 @@
-
 = form_for @comment do |f|
   - if @comment.errors.any?
     #error_explanation
@@ -11,6 +10,8 @@
   
   
   = hidden_field_tag 'comment[post_id]', @post.id
+  
+  %a#respond
   
   #new_comment_form
     .field

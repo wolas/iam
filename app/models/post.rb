@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
     body.slice 0, num
   end  
   
-  def short_title num=50
+  def short_title num=40
     return "" if title.blank?
     
     title.size > num ? title.slice(0, num - 3) + "..." : title
