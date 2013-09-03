@@ -2,12 +2,11 @@
   %h1= @event.name
   %p 
     Estas aquí: 
-    = link_to "Events", events_path 
+    = link_to "Admin", path 
+    >
+    = link_to "Events", events_path
     >
     = @event.name
-
-
-
 
 .info_event.clearfix
   - if @event.photo
@@ -31,4 +30,4 @@
                   %a.gallery{:href => p.image.url(:large)}  
                     = image_tag p.image.url(:thumb)
                   / %span 
-      %hr/           
+      %hr/

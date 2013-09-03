@@ -19,31 +19,34 @@
   \|
   = link_to 'Destroy', [:admin, @artist, @painting], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-- if @painting.photo
-  = image_tag @painting.photo.image.url(:medium)
-- else
-  %img{:src => "http://placehold.it/200x200"}
 
-%p
-  %b Artist:
-  = @painting.artist.name
-%p
-  %b Title:
-  = @painting.title
-%p
-  %b Technique:
-  = @painting.technique
-%p
-  %b Width:
-  = @painting.width
-%p
-  %b Height:
-  = @painting.height
-%p
-  %b Finished on:
-  = @painting.finished_on
-%p
-  %b Price:
-  = @painting.price
+.painting_image
+  - if @painting.photo
+    = image_tag @painting.photo.image.url(:medium)
+  - else
+    %img{:src => "http://placehold.it/200x200"}
+
+.painting_info
+  %p
+    %b Artist:
+    = link_to @painting.artist.name, @painting.artist
+  %p
+    %b Title:
+    = @painting.title
+  %p
+    %b Technique:
+    = @painting.technique
+  %p
+    %b Width:
+    = @painting.width
+  %p
+    %b Height:
+    = @painting.height
+  %p
+    %b Finished on:
+    = @painting.finished_on
+  %p
+    %b Price:
+    = @painting.price
 
 

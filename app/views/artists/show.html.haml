@@ -21,12 +21,10 @@
     %hr/
     .paintings.clearfix
       %h3 Obra
-      %ul
-        - @paintings.in_groups_of(6, false) do |painting|
-          .list_of_paintings
-            - painting.each do |p|
-              - next unless p.photo
-              %li
-                %a.gallery{:href => p.photo.image.url(:large)}
-                  = image_tag p.photo.image.url(:thumb)
+      - @paintings.in_groups_of(6, false) do |painting|
+        .list_of_paintings
+          - painting.each do |p|
+            - next unless p.photo
+            %a.gallery{:href => p.photo.image.url(:large)}
+              = image_tag p.photo.image.url(:thumb)
     %hr/ 
