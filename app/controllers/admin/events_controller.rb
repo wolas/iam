@@ -32,7 +32,7 @@ class Admin::EventsController < AdminController
       if @event.save
         params[:event][:photos].each { |file| @event.photos.create :image => file }
         
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
       else
         format.html { render action: 'new' }

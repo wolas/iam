@@ -10,6 +10,8 @@
 
 
 #links
+  = link_to "Back", admin_events_path
+  |
   = link_to "Edit", edit_admin_event_path(@event)
   |
   = link_to "Destroy", [:admin, @event], method: :delete, confirm: "Are you sure?"
