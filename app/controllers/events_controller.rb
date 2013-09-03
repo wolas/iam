@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  
   
   def expositions
     @expositions = Event.find_all_by_category "Exposition"
@@ -8,6 +7,14 @@ class EventsController < ApplicationController
   
   def popups
     @popups = Event.find_all_by_category "Popup"
+  end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def index
+    @events = Event.all
   end
   
 end  

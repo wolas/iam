@@ -8,12 +8,6 @@
     >
     = @event.name
 
-
-#links
-  = link_to "Edit", edit_event_path(@event)
-  |
-  = link_to "Destroy", [:admin, @event], method: :delete, confirm: "Are you sure?"
-
 .info_event.clearfix
   - if @event.photo
     = image_tag @event.photo.image.url(:medium)
@@ -27,12 +21,13 @@
     .paintings.clearfix     
       %h3 Obra
       %ul 
-        - @photos.in_groups_of(6, false) do |photos|
-          .list_of_paintings
-            - photos.each do |p|
-              - next unless p
-              %li
-                %a.gallery{:href => p.image.url(:large)}  
-                  = image_tag p.image.url(:thumb)
-                / %span 
-    %hr/           
+        -if @photos
+          - @photos.in_groups_of(6, false) do |photos|
+            .list_of_paintings
+              - photos.each do |p|
+                - next unless p
+                %li
+                  %a.gallery{:href => p.image.url(:large)}  
+                    = image_tag p.image.url(:thumb)
+                  / %span 
+      %hr/
