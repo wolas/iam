@@ -1,5 +1,6 @@
 %table
   %tr
+    %th
     %th Title
     %th Technique
     %th Width
@@ -12,6 +13,7 @@
 
   - @paintings.each do |painting|
     %tr
+      %td= image_tag(painting.photo.image.url(:thumb), width: 50) if painting.photo
       %td= painting.title
       %td= painting.technique
       %td= painting.width
