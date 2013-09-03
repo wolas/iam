@@ -28,12 +28,10 @@
     %hr/
     .paintings.clearfix
       %h3 Obra
-      %ul
-        - @paintings.in_groups_of(6, false) do |painting|
-          .list_of_paintings
-            - painting.each do |p|
-              - next unless p.photo
-              %li
-                = link_to image_tag(p.photo.image(:thumb)), [:admin, @artist, p]
-                %span= p.title
+      - @paintings.in_groups_of(6, false) do |painting|
+        .list_of_paintings
+          - painting.each do |p|
+            - next unless p.photo
+            = link_to image_tag(p.photo.image(:thumb)), [:admin, @artist, p]
+            %span= p.title
     %hr/ 
