@@ -9,3 +9,11 @@
   
       #links
         = link_to "Destroy", admin_post_comment_path(@post,comment), method: :delete, confirm: "Are you sure" 
+.comment_photos
+  - @photos.each do |photo|
+    %table 
+      %tr 
+        %td= image_tag photo.image.url(:thumb)
+      %tr 
+        %td= link_to "Destroy", admin_photo_path(photo), method: :delete, confirm: "Are you sure"   
+          

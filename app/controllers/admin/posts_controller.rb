@@ -12,6 +12,7 @@ class Admin::PostsController < AdminController
   def show
     @comments = @post.comments
     @comment = Comment.new
+    @photos = @post.photos
   end
 
   # GET /posts/new
