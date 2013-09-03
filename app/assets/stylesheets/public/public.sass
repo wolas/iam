@@ -103,9 +103,9 @@
 
 #blog_sidebar
   float: right
-  width: 300px
+  width: 240px
   min-height: 400px
-  border: 1px solid red
+  
   p
     color: $black
     font-weight: bold
@@ -116,11 +116,24 @@
       font-size: 11px
       font-style: italic
       color: $grey
-      height: 40px
-      border: 1px solid red
+      height: 30px
+      line-height: 30px
+      border-bottom: 3px solid $black
+      
 
 #blog
   float: left
+  background-position: top right
+  background-repeat: no-repeat
+  padding-right: 30px
+  position: relative
+  
+#blog:after
+  content: url(../layout/sidebar_shadow.png)
+  position: absolute
+  right: -36px
+  top: 0
+    
 
 .post_item 
   width: 655px

@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   
   has_one :photo, :as => :avatar
   has_many :photos, :as => :parent
+  
+  accepts_nested_attributes_for :photo
 
   def short_body num=450
     return "" if body.blank?
