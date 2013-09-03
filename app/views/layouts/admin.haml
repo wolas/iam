@@ -3,7 +3,7 @@
   %head
     %title Iam
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans"
-    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "admin"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
@@ -21,32 +21,9 @@
 
           #menu
             %ul.clearfix
-              %li
-                %a{:href => root_path} IAM 
-                %ul
-                  %li
-                    =link_to("Manifesto", manifesto_path) 
-                  %li
-                    =link_to("Trayectoria", trajectory_path)     
-              %li= link_to "ARTISTAS", artists_path
-
-  
-              %li
-                %a(href='#') ACTIVIDADES
-                %ul 
-                  %li 
-                    = link_to("Exposiciones", expositions_path) 
-                  %li 
-                    = link_to("Pop-up", popups_path)  
-  
-              %li 
-                = link_to "BLOG", posts_path
-  
-              %li 
-                %a(href='#') SHOP
-  
-              %li.last
-                %a(href='#') CONTACTO
+              %li= link_to "ARTISTS", admin_artists_path
+              %li= link_to("EVENTS", admin_events_path)
+              %li= link_to "POSTS", admin_posts_path
 
       
       - if alert
