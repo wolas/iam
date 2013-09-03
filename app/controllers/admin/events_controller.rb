@@ -11,6 +11,7 @@ class Admin::EventsController < AdminController
   # GET /events/1.json
   def show
     @photos = @event.photos
+    
   end
   
   # GET /events/new

@@ -26,15 +26,11 @@
     %h2= @event.name
     %p= @event.summary
     %hr/ 
-    .paintings.clearfix     
-      %h3 Obra
-      %ul 
-        - @photos.in_groups_of(6, false) do |photos|
-          .list_of_paintings
-            - photos.each do |p|
-              - next unless p
-              %li
-                %a.gallery{:href => p.image.url(:large)}  
-                  = image_tag p.image.url(:thumb)
-                / %span 
+    %table 
+      - @photos.each do |photo|
+        %tr
+          %td
+            = image_tag photo.image.url(:thumb) 
+          %td 
+            = link_to "Destroy", admin_photo_path(photo), method: :delete, confirm: "Are you sure"  
     %hr/           

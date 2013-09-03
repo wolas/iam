@@ -76,6 +76,7 @@ Iam::Application.routes.draw do
       resources :paintings
     end
     
+    resources :photos
     resources :events
     resources :popups
     resources :expositions

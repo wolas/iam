@@ -11,7 +11,7 @@
     #body_wrapper
       #header
         .content
-          #logo= link_to image_tag("logo.png"), root_path
+          #logo= link_to image_tag("logo.png"), admin_path
 
           #search{:class => "fr"}
             %form{:action => "#"}
@@ -43,14 +43,14 @@
           
           = yield(:breadcrumbs)
 
- 
+            
       #main_content.clearfix
         .container
           = yield
       
       #footer_push
       
-    #footer
-      #footer_links
-        &copy; iam Gallery Madrid - 
-        = link_to "Aviso Legal", legal_path
+    / #footer
+    /   #footer_links
+    /     &copy; iam Gallery Madrid - 
+    /     = link_to "Aviso Legal", legal_path

@@ -1,15 +1,27 @@
 @import "imports"
 
 table
+  tr
+    th
+      color: $black
+      text-transform: uppercase
+      font-size: 14px
+      font-weight: bold
+
+    td
+      padding-top: 10px
+      text-align: center
   
   width: 100%
   thead
-    text-align: left
+    text-align: center
+    
   
   tbody
     tr
       td
         vertical-align: middle
+
 
 
 .info_artist, .info_event
@@ -18,8 +30,7 @@ table
     display: block
     margin: 0 25px 0 0
     
-  span
-    display: block
+  
 
   .bio
     width: 730px
@@ -33,9 +44,18 @@ table
     hr
       border-top: 3px solid $black
 
+    figure
+      display: block
+      width: 100px
+    
 
-#breadcrumbs
-  padding: 15px 0
+
+
+#breadcrumb
+  padding: 5px 0 0 0
+
+  p
+    margin-bottom: 0
   
 #links
   float: right
