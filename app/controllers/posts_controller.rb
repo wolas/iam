@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @recent_posts = @posts.slice(1..5)
   end
 
   # GET /posts/1
