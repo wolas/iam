@@ -46,6 +46,8 @@
     float: left
     display: block
     margin: 0 25px 0 0
+    padding: 1px
+    border: 1px solid $grey
     
   span
     display: block
@@ -161,3 +163,50 @@
         .comment_body
           color: $grey20
           font-size: 12px 
+          
+          
+#new_comment_form 
+  margin-left: 80px
+  color: $grey20
+  
+  
+  
+  .field
+    padding: 5px
+    width: 350px
+    
+    .field_with_errors
+      padding: 2px
+      color: red
+      display: table-cell
+  
+      textarea, input, label
+        border-color: red
+    
+    textarea, input
+      border: 1px solid black
+      color: $grey
+      font-size: 13px
+      outline-color: $grey
+      padding: 6px 4px
+    
+    textarea
+      width: 700px
+      height: 200px
+    
+    input
+      height: 15px
+      width: 220px
+    
+    label
+      padding-left: 15px
+      font:
+        size: 11px
+        weight: bold
+        
+#new_comment_cancel_link
+  float: right
+    
+    
+    
+    
