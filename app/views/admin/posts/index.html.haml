@@ -9,7 +9,7 @@
   = link_to 'New Post', new_admin_post_path
 
 
-%table
+%table.posts
   %tr
     %th Title
     %th Date
@@ -20,9 +20,9 @@
 
   - @posts.each do |post|
     %tr
-      %td= post.title
-      %td= post.posted_on
-      %td= post.body
+      %td.title= post.title
+      %td.posted= post.posted_on
+      %td!= RedCloth.new(post.short_body).to_html
       %td= link_to 'Show', admin_post_path(post)
       %td= link_to 'Edit', edit_admin_post_path(post)
       %td= link_to 'Destroy',[:admin, post], :method => :delete, :data => { :confirm => 'Are you sure?' }        
