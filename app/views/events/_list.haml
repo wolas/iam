@@ -1,13 +1,27 @@
-- events.in_groups_of(4, false) do |events|    
-  .events.clearfix
-    - events.each do |event|
-      .event
+%ul#filter_menu.clearfix
+  
+  %li.active
+    = link_to "All", "#", :class => 'all'
+    |
+  - @tags.each do |tag|
+    %li
+      = link_to tag.name.upcase, "#", :class => tag.name.downcase
+      |
+
+
+
+
+#all_items.clearfix  
+  
+  %ul.items{'data-type' => 'all' }
+    - @events.each_with_index do |event, index|
+      %li.item{'data-id' => "id-" + (index + 1).to_s, 'data-type' => event.tags.join(" ")}
         - if event.photo
           = image_tag event.photo.image.url(:thumb300), width: 200 if event.photo
         - else
           %img{:src => "http://placehold.it/200x200"}
-          
+      
         .info
-          %h4= link_to event.name, event_path(event)
-          %p= event.short_summary 
-          = link_to "[...]", event_path(event)
+          %h4= link_to event.name, event
+          %p= event.short_summary
+          =link_to "[...]", event

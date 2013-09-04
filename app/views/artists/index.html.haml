@@ -20,11 +20,11 @@
 
 
 
-#all_artists.clearfix  
+#all_items.clearfix  
   
-  %ul.artists{'data-type' => 'all' }
+  %ul.items{'data-type' => 'all' }
     - @artists.each_with_index do |artist, index|
-      %li.artist{'data-id' => "id-" + (index + 1).to_s, 'data-type' => artist.name.first.downcase }
+      %li.item{'data-id' => "id-" + (index + 1).to_s, 'data-type' => artist.name.first.downcase }
         - if artist.photo
           = image_tag artist.photo.image.url(:thumb300), width: 200 if artist.photo
         - else

@@ -436,9 +436,9 @@ $(document).ready(function() {
   // get the action filter option item on page load
   var $filterType = $('#filter_menu li.active a').attr('class');
 
-  // get and assign the artists element to the
+  // get and assign the items element to the
   // $holder varible for use later
-  var $holder = $('ul.artists');
+  var $holder = $('ul.items');
 
   // clone all items within the pre-assigned $holder element
   var $data = $holder.clone();
@@ -461,7 +461,7 @@ $(document).ready(function() {
     else {
       // find all li elements that have our required $filterType
       // values for the data-type element
-      var $filteredData = $data.find('li[data-type=' + $filterType + ']');
+      var $filteredData = $data.find('li[data-type~=' + $filterType + ']');
     }
 
     // call quicksand and assign transition parameters

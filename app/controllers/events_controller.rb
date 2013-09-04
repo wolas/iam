@@ -2,11 +2,15 @@ class EventsController < ApplicationController
   
   
   def expositions
-    @expositions = Event.find_all_by_category "Exposition"
+    @events = Event.find_all_by_category "Exposition"
+    @tags = @events.map(&:tags).flatten.uniq
   end
   
   def popups
-    @popups = Event.find_all_by_category "Popup"
+    @events = Event.find_all_by_category "Popup"
+    @tags = @events.map(&:tags).flatten.uniq
+    
+    
   end
 
   def show
