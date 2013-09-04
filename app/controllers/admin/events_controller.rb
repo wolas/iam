@@ -1,17 +1,25 @@
 class Admin::EventsController < AdminController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
+  include ActsAsTaggableOn::TagsHelper
+  
+  def tag
+    @tag = params[:tag_name]
+    @events = Event.tagged_with(@tag).order("start ASC")
+    @tags = Event.tag_counts_on(:tags)
+  end
+  
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order("start ASC")
+    @tags = Event.tag_counts_on(:tags)
   end
   
   # GET /events/1
   # GET /events/1.json
   def show
     @photos = @event.photos
-    
   end
   
   # GET /events/new
@@ -76,6 +84,6 @@ class Admin::EventsController < AdminController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :summary, :start, :stop, :category, :place, :photo_attributes => [:id, :event_id, :image])
+      params.require(:event).permit(:name, :summary, :start, :stop, :category, :place, :tag_list, :photo_attributes => [:id, :event_id, :image])
     end
 end

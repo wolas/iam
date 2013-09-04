@@ -1,13 +1,38 @@
-- events.in_groups_of(4, false) do |events|    
-  .events.clearfix
-    - events.each do |event|
-      .event
-        - if event.photo
-          = image_tag event.photo.image.url(:thumb300), width: 200 if event.photo
-        - else
-          %img{:src => "http://placehold.it/200x200"}
-          
-        .info
-          %h4= link_to event.name, admin_event_path(event)
-          %p= event.short_summary 
-          = link_to "[...]", admin_event_path(event)
+= link_to "ALL", admin_events_path, :class => "css4"
+
+
+- tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+  = link_to tag.name.upcase, admin_event_tag_path(tag.name), :class => css_class
+
+%br
+%br
+
+%table
+  %tr
+    %th Photo
+    %th Category
+    %th Name
+    %th Summary
+    %th Start
+    %th Stop
+    %th Place
+    %th
+    %th
+    %th
+
+  - @events.each do |event|
+    %tr
+      %td
+        -if event.photo
+          = image_tag event.photo.image.url(:thumb50)
+        -else
+          = image_tag "http://www.placehold.it/50x50"
+      %td.even= event.category
+      %td.odd= event.name
+      %td.even= event.short_summary(50)
+      %td.odd= event.start
+      %td.even= event.stop
+      %td.odd= event.place
+      %td= link_to 'Show', admin_event_path(event)
+      %td= link_to 'Edit', edit_admin_event_path(event)
+      %td= link_to 'Destroy',[:admin, event], :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -76,6 +76,7 @@ Iam::Application.routes.draw do
     end
     
     resources :photos
+    get 'events/tag/:tag_name', to: "events#tag", as: 'event_tag'
     resources :events
     resources :posts do
       resources :comments

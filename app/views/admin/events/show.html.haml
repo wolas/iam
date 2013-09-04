@@ -23,8 +23,15 @@
     %img{:src => "http://placehold.it/200x200"}
   
   .bio
-    %h2= @event.name
-    %p= @event.summary
+    %p
+      %h3 Tags
+      = @event.tag_list
+    
+    
+    %p
+      %h3 Summary
+      = @event.summary
+    
     %hr/ 
     %table 
       - @photos.each do |photo|

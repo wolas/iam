@@ -4,7 +4,10 @@
     Estas aquí: 
     = link_to "Admin", admin_path 
     >
-    Events
+    = link_to "Events", admin_events_path
+    >
+    Tag:
+    = @tag.capitalize
 
 #links
   = link_to 'New Event', new_admin_event_path
