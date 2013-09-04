@@ -22,9 +22,9 @@
 
 .painting_image
   - if @painting.photo
-    = image_tag @painting.photo.image.url(:medium)
+    = image_tag @painting.photo.image.url(:thumb300)
   - else
-    %img{:src => "http://placehold.it/200x200"}
+    %img{:src => "http://placehold.it/300x300"}
 
 .painting_info
   %p

@@ -23,7 +23,7 @@
         .post_month= post.posted_on.strftime("%b").upcase
         .post_year= post.posted_on.year
       .post
-        = link_to image_tag(post.photo.image.url(:width_500)), post if post.photo
+        = link_to image_tag(post.photo.image.url(:thumb500)), post if post.photo
         %h2= link_to post.title, post
         .post_body
           != RedCloth.new(post.body).to_html

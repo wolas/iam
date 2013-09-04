@@ -19,9 +19,9 @@
       %tr
         %td
           - if artist.photo
-            = image_tag artist.photo.image.url(:thumb), width: 50
+            = image_tag artist.photo.image.url(:thumb50) 
           - else
-            = image_tag "http://www.placehold.it/80x80", width: 50
+            = image_tag "http://www.placehold.it/50x50"
           
         %td.even= artist.name
         %td.odd= artist.paintings.count

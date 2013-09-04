@@ -26,9 +26,9 @@
     %tr
       %td
         -if event.photo
-          = image_tag event.photo.image.url(:thumb), width: 50
+          = image_tag event.photo.image.url(:thumb50)
         -else
-          = image_tag "http://www.placehold.it/80*80", width: 50  
+          = image_tag "http://www.placehold.it/50x50"
       %td.even= event.category
       %td.odd= event.name
       %td.even= event.short_summary(50)

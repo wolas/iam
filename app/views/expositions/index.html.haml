@@ -10,7 +10,7 @@
     - expositions.each do |exposition|
       .exposition
         - if exposition.photo
-          = image_tag exposition.photo.image.url(:medium) if exposition.photo
+          = image_tag exposition.photo.image.url(:thumb300), width: 200 if exposition.photo
         - else
           %img{:src => "http://placehold.it/200x200"}
           

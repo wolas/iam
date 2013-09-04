@@ -7,7 +7,7 @@
 
 .info_exposition.clearfix
   - if @exposition.photo
-    = image_tag @exposition.photo.image.url(:medium) if @exposition.photo
+    = image_tag @exposition.photo.image.url(:thumb300), width: 200 if @exposition.photo
   - else
     %img{:src => "http://placehold.it/200x200"}
   
@@ -24,7 +24,7 @@
               - next unless p.photo
               %li
                 %a.gallery{:href => p.photo.image.url(:large)}  
-                  = image_tag p.photo.image.url(:thumb)
+                  = image_tag p.photo.image.url(:thumb100)
                 / %span 
     %hr/           
 

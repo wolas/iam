@@ -18,7 +18,7 @@
 
 .info_artist.clearfix
   - if @artist.photo
-    = image_tag @artist.photo.image.url(:medium)
+    = image_tag @artist.photo.image.url(:thumb300), width: 200
   - else
     %img{:src => "http://placehold.it/200x200"}
   

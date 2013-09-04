@@ -3,7 +3,7 @@
     - events.each do |event|
       .event
         - if event.photo
-          = image_tag event.photo.image.url(:medium) if event.photo
+          = image_tag event.photo.image.url(:thumb300), width: 200 if event.photo
         - else
           %img{:src => "http://placehold.it/200x200"}
           

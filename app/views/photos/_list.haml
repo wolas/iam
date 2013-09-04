@@ -4,4 +4,4 @@
   - photos.in_groups_of(num, false) do |photos|
     .photos_row.clearfix 
       - photos.each do |p|
-        = link_to image_tag(p.image.url(:medium), width: "150px"), p.image.url(:large), class: "gallery"
+        = link_to image_tag(p.image.url(:thumb300), width: 150), p.image.url(:large), class: "gallery"

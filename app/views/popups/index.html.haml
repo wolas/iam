@@ -10,7 +10,7 @@
     - popups.each do |popup|
       .popup
         - if popup.photo
-          = image_tag popup.photo.image.url(:medium) if popup.photo
+          = image_tag popup.photo.image.url(:thumb300), width: 200 if popup.photo
         - else
           %img{:src => "http://placehold.it/200x200"}
           
