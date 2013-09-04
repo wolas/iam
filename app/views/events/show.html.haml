@@ -4,7 +4,7 @@
     Estas aquí: 
     = link_to "Home", root_path 
     >
-    = link_to "Events", events_path
+    = link_to @event.category.capitalize.pluralize, send("#{@event.category.pluralize.downcase}_path")
     >
     = @event.name
 
