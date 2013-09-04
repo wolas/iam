@@ -1,0 +1,10 @@
+.comment_photos
+  %h3 Photos of this post 
+  - @photos.in_groups_of(4,false) do |photos|
+    .photo_container
+      - photos.each do |p|
+        %figure 
+          = image_tag p.image.url(:thumb)
+          %figcaption 
+            = link_to "Destroy", admin_photo_path(p), method: :delete, confirm: "Are you %sur e?"  
+      

@@ -29,12 +29,12 @@
           = image_tag event.photo.image.url(:thumb), width: 50
         -else
           = image_tag "http://www.placehold.it/80*80", width: 50  
-      %td= event.category
-      %td= event.name
-      %td= event.short_summary(50)
-      %td= event.start
-      %td= event.stop
-      %td= event.place
+      %td.even= event.category
+      %td.odd= event.name
+      %td.even= event.short_summary(50)
+      %td.odd= event.start
+      %td.even= event.stop
+      %td.odd= event.place
       %td= link_to 'Show', admin_event_path(event)
       %td= link_to 'Edit', edit_admin_event_path(event)
       %td= link_to 'Destroy',[:admin, event], :method => :delete, :data => { :confirm => 'Are you sure?' }

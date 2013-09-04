@@ -7,7 +7,7 @@ class Admin::PhotosController < AdminController
     @event = @photo.parent
     @photo.destroy
     respond_to do |format|
-      format.html { redirect_to admin_event_url(@event) }
+      format.html { redirect_to [:admin, @photo.parent] }
       format.json { head :no_content }
     end
   end

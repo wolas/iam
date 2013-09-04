@@ -9,13 +9,12 @@
   = link_to "New artist", new_admin_artist_path
 
 %table
-  %thead
+  %tr
     %th
     %th Name
     %th Paintings
     %th Web
     %th
-  %tboby
     - @artists.each do |artist|
       %tr
         %td
@@ -24,9 +23,9 @@
           - else
             = image_tag "http://www.placehold.it/80x80", width: 50
           
-        %td= artist.name
-        %td= artist.paintings.count
-        %td= link_to artist.web, "http://#{artist.web}", target: "_blank"
+        %td.even= artist.name
+        %td.odd= artist.paintings.count
+        %td.even= link_to artist.web, "http://#{artist.web}", target: "_blank"
         %td
           = link_to "Show", admin_artist_path(artist)
           |

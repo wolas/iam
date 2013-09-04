@@ -1,7 +1,20 @@
 @import "imports"
 
+a
+  padding: 5px
+  color: green
+  
+  &.hover
+    text-decoration: underline
+    color: green
+
 table
   tr
+    border-bottom: 1px solid $black
+
+    &.no_border
+      border-bottom: none
+
     th
       color: $black
       text-transform: uppercase
@@ -9,18 +22,17 @@ table
       font-weight: bold
 
     td
-      padding-top: 10px
-      text-align: center
+      text-align: left
+      padding: 10px 10px
+
+      &.even
+        background-color: #c1c1c1
+
+      &.odd
+        background-color: #9d9d9d  
   
   width: 100%
-  thead
-    text-align: center
 
-  
-  tbody
-    tr
-      td
-        vertical-align: middle
 
 
 
@@ -112,15 +124,39 @@ table
 .comment_list
   margin-left: 80px
   width: 420px
+  float: left
+  margin-top: 20px
+  border-right: 1px solid $black
+  padding-right: 30px
+  h3
+    text-align: center
 
   .comment
     padding-top: 10px
     border-bottom: 1px solid $black
 
-.coment_photos
+.comment_photos
   width: 420px
-  margin-left: 80px
-  border: 1ps solid red    
+  margin-top: 20px
+  border: 1ps solid red 
+  float: right   
+
+  h3
+    text-align: center
+
+  .photo_container
+    margin-bottom: 20px
+    width: 400px
+    display: block
+    figure
+      float: left  
+      margin-right: 5px
+      margin-bottom: 10px
+      border: 1px solid $black
+      padding: 5px
+      text-align: center
+    
+      
 
 
 

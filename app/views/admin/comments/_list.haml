@@ -1,4 +1,5 @@
 .comment_list
+  %h3 Comments of this post
   - @comments.each do |comment|
     .comment.clearfix
       .comment_face= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.author_email.downcase)}.png?s=36&d=http://b.vimeocdn.com/ps/242/130/2421306_300.jpg", width: 36
@@ -9,11 +10,5 @@
   
       #links
         = link_to "Destroy", admin_post_comment_path(@post,comment), method: :delete, confirm: "Are you sure" 
-.comment_photos
-  - @photos.each do |photo|
-    %table 
-      %tr 
-        %td= image_tag photo.image.url(:thumb)
-      %tr 
-        %td= link_to "Destroy", admin_photo_path(photo), method: :delete, confirm: "Are you sure"   
+ 
           

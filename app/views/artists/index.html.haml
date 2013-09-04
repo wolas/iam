@@ -5,6 +5,14 @@
     = link_to "Home", root_path 
     > Artistas
 
+.artist_index
+  - @letter.each do |letter|
+    %span= letter 
+    |
+
+    
+  
+
 - @artists.in_groups_of(4, false) do |artists|    
   .artists.clearfix
     - artists.each do |artist|
