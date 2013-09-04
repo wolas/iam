@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
-    @letter = @artists.map { |artist| artist.name.first }
+    @letter = @artists.map { |artist| artist.name.first.downcase }.uniq
   end
 
 
