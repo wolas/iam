@@ -19,6 +19,7 @@ class Photo < ActiveRecord::Base
     :thumb500 => "500x500#",
     :thumb300 => "300x300#",
     :thumb100 => "100x100#"
+    :thumb50 => "50x50#"
   }
   
 
