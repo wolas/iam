@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   
+  acts_as_taggable
+  
   has_and_belongs_to_many :paintings
   has_one :photo, :as => :avatar
   has_many :photos, :as => :parent

@@ -18,7 +18,7 @@
 
 .info_event.clearfix
   - if @event.photo
-    = image_tag @event.photo.image.url(:medium)
+    = image_tag @event.photo.image.url(:thumb300), width: 200
   - else
     %img{:src => "http://placehold.it/200x200"}
   
