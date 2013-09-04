@@ -2,8 +2,7 @@ Iam::Application.routes.draw do
   
   resources :comments
   resources :posts
-  
-  get "events", to: "events#index"
+
   get "events/:id", to: "events#show", as: "event"
   get "expositions", to: "events#expositions"
   get "pop-ups", to: "events#popups", as: "popups"
@@ -78,8 +77,6 @@ Iam::Application.routes.draw do
     
     resources :photos
     resources :events
-    resources :popups
-    resources :expositions
     resources :posts do
       resources :comments
     end

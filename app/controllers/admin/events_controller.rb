@@ -31,7 +31,7 @@ class Admin::EventsController < AdminController
     
     respond_to do |format|
       if @event.save
-        params[:event][:photos].each { |file| @event.photos.create :image => file }
+        params[:event][:photos].each { |file| @event.photos.create :image => file } if params[:event][:photos]
         
         format.html { redirect_to admin_event_path(@event), notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
