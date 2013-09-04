@@ -9,6 +9,6 @@ class Artist < ActiveRecord::Base
     return "" if bio.blank?
     bio.slice 0, num
   end  
-
+  
   
 end

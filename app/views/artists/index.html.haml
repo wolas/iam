@@ -5,27 +5,32 @@
     = link_to "Home", root_path 
     > Artistas
 
-.artist_index
-  - @letter.each do |letter|
-    %span= letter 
-    |
 
-    
+
+%ul#filter_menu.clearfix
   
+  %li.active
+    = link_to "All", "#", :class => 'all'
+    |
+  - @letter.each do |letter|
+    %li
+      = link_to letter.upcase, "#", :class => letter
+      |
 
-- @artists.in_groups_of(4, false) do |artists|    
-  .artists.clearfix
-    - artists.each do |artist|
-      .artist
+
+
+
+#all_artists.clearfix  
+  
+  %ul.artists{'data-type' => 'all' }
+    - @artists.each_with_index do |artist, index|
+      %li.artist{'data-id' => "id-" + (index + 1).to_s, 'data-type' => artist.name.first.downcase }
         - if artist.photo
-          = image_tag artist.photo.image.url(:medium) if artist.photo
+          = image_tag artist.photo.image.url(:thumb300), width: 200 if artist.photo
         - else
           %img{:src => "http://placehold.it/200x200"}
-          
+      
         .info
           %h4= link_to artist.name, artist
           %p= artist.short_bio
-          =link_to "[...]", artist    
-
-
-
+          =link_to "[...]", artist
