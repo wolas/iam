@@ -1,5 +1,7 @@
 Iam::Application.routes.draw do
   
+  resources :carts
+
   resources :comments
   resources :posts
 
