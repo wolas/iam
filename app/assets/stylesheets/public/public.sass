@@ -77,15 +77,76 @@
     hr
       border-top: 3px solid $black
 
+    .list_of_paintings
+      .painting
+        float: left
+        margin-right: 5px
+        .buy
+          display: block
+          border-radius: 5px
+          background: $black 
+          color: $white
+          padding: 3px 10px
+          text-decoration: none
+          text-align: center
+
+          &:hover
+            background: $grey20
+
+           
+         
+        
+
 
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*PAINTINGS*/
 /*-----------------------------------------------------------------------------------------------------------------*/
+.notice
+  background: rgb(224,241,181)
+  padding: 10px 5px 10px
+  border: 1px solid rgb(139,175,91)
+  margin-bottom: 30px
+
+  .tick
+    display: inline
+    margin-right: 5px
+    position: relative
+    top: 3px
+
+  p
+    display: inline  
+
+
 .painting_image
   float: left
+  margin-right: 50px
   
 .painting_info
   float: left
+
+  p.title
+    font-size: 20px
+    text-transform: uppercase
+    line-height: 40px
+    color: $black
+  p
+    font-size: 12px
+    line-height: 20px
+    color: $grey
+
+  input[type="submit"]
+    border-radius: 5px
+    background: $black 
+    color: $white
+    padding: 10px
+    border: none
+    cursor: pointer
+
+    &:hover
+      background: $grey20
+
+
+    
 
 
 /*-----------------------------------------------------------------------------------------------------------------*/

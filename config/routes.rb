@@ -1,5 +1,7 @@
 Iam::Application.routes.draw do
   
+  resources :line_items
+
   resources :carts
 
   resources :comments
@@ -11,6 +13,8 @@ Iam::Application.routes.draw do
   
   get "artists", to: "artists#index"
   get "artists/:id", to: "artists#show", as: "artist"
+
+  get "paintings/:id", to: "paintings#show", as: "painting"
   
   get "legal" => "static#legal", :as => "legal"
   get "manifesto" => "static#manifesto", :as => "manifesto"
