@@ -1,0 +1,42 @@
+- content_for :breadcrumbs do
+  %h1= @painting.title
+  %p
+    Estas aquí:
+    = link_to "Home", root_path
+    >
+    = link_to "Shop"
+    >
+    = link_to "Paintings"
+    >
+    =link_to @artist.name, artist_path(@artist.id)
+-if notice
+  .notice
+    = image_tag("tick.png", class: "tick")
+    %p= notice    
+
+
+.painting_image
+  - if @painting.photo
+    = image_tag @painting.photo.image.url(:thumb300)
+  - else
+    %img{:src => "http://placehold.it/300x300"}
+
+.painting_info
+  %p.title
+    = @painting.title
+  %p
+    = @painting.technique
+  %p
+    = @painting.width
+    cm
+    x
+    = @painting.height
+    cm
+  %p
+    = @painting.price
+
+  
+  = button_to "Add to cart", line_items_path(painting_id: @painting.id)    
+
+
+

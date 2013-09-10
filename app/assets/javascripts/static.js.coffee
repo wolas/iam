@@ -31,3 +31,4 @@ $(document).ready ->
     ).slideDown 1000
   
     false
+

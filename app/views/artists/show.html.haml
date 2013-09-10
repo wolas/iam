@@ -26,6 +26,9 @@
         .list_of_paintings
           - painting.each do |p|
             - next unless p.photo
-            %a.gallery{:href => p.photo.image.url(:large)}
-              = image_tag p.photo.image.url(:thumb100), widt: 80
+            .painting
+              %a.gallery{:href => p.photo.image.url(:large)}
+                = image_tag p.photo.image.url(:thumb100), widt: 80
+              
+              = link_to 'Buy', painting_path(p), class: "buy"
     %hr/ 
